@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule
   ],
+  exports: [NavMenuComponent],
   declarations: [NavMenuComponent]
 })
 export class NavMenuModule { }
