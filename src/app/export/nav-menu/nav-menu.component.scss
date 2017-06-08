@@ -37,10 +37,48 @@
                 padding: 0;
                 text-align: center;
                 transition: transform 0.2s linear;
+                
             }
             &:hover {
                 color: #00abff;
             }
         }
     }
+    .sidebar-childlist{
+        display: none;
+    }
+
+    .overturnSub{
+        > a.ch-sidebar-list-link{
+            b {
+                transform: rotate(90deg);
+            }
+        }
+        > .sidebar-childlist{
+            display: block;
+        }
+    }
+
+
+    @mixin sidebar-shrink(){
+        .ch-navMenu{
+            width: 52px;
+             li {
+                a.ch-sidebar-list-link{
+                    span,b{
+                        display: none;
+                    }
+                }
+                ul.sidebar-childlist{
+                    display: none !important;
+                }
+            }
+            
+        }
+    }
+
+    @media (max-width: 1000px) {
+          @include sidebar-shrink(); 
+    }
 }
+

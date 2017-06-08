@@ -1,14 +1,16 @@
-  <li>
-      <a class="ch-sidebar-list-link">
-          <i class="glyphicon glyphicon-home"></i>
-          <span>navMenu</span>
-            <b class="fa fa-angle-down"></b>
-      </a>
-  </li>
-  <li>
-      <a class="ch-sidebar-list-link">
-          <i class="glyphicon glyphicon-home"></i>
-          <span>navMenu</span>
+<li [ngClass]="{overturnSub: arrows}">
+    <a *ngIf="menuItem.children" class="ch-sidebar-list-link" (click)="onToggleSub($event)">
+          <i class="{{menuItem.icon}}"></i>
+          <span>{{menuItem.title}}</span>
           <b class="fa fa-angle-down"></b>
-      </a>
-  </li>
+    </a>
+
+    <a *ngIf="!menuItem.children" class="ch-sidebar-list-link">
+          <i class="{{menuItem.icon}}"></i>
+          <span>{{menuItem.title}}</span>
+    </a>
+
+    <ul *ngIf="menuItem.children" class="sidebar-childlist">
+        <ch-MenuItem [menuItem]="subItem" *ngFor="let subItem of menuItem.children"></ch-MenuItem>
+    </ul>
+</li>
