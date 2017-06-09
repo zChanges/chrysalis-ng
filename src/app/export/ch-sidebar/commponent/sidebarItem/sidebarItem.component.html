@@ -11,6 +11,6 @@
     </a>
 
     <ul *ngIf="menuItem.children" class="sidebar-childlist">
-        <ch-MenuItem [menuItem]="subItem" *ngFor="let subItem of menuItem.children"></ch-MenuItem>
+        <sidebarItem [menuItem]="subItem" *ngFor="let subItem of menuItem.children"></sidebarItem>
     </ul>
 </li>

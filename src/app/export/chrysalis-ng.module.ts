@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { NavMenuModule } from './nav-menu';
+import { ChSidebarModule } from './ch-sidebar';
 
 @NgModule({
   imports: [
     CommonModule,
-    NavMenuModule
+    ChSidebarModule
   ],
   exports: [
-    NavMenuModule
+    ChSidebarModule
   ],
   declarations: []
 })

@@ -1,6 +1,6 @@
 @import '../../../assets/config.scss';
 .ch-navMenu {
-    background: #000;
+    background: #1c2b36;
     width: auto;
 }
 :host /deep/{
@@ -43,6 +43,9 @@
                 color: #00abff;
             }
         }
+        .sidebar-childlist{
+            background: #131e26;
+        }
     }
     .sidebar-childlist{
         display: none;
@@ -51,7 +54,7 @@
     .overturnSub{
         > a.ch-sidebar-list-link{
             b {
-                transform: rotate(90deg);
+                transform: rotate(180deg);
             }
         }
         > .sidebar-childlist{
@@ -59,26 +62,18 @@
         }
     }
 
-
-    @mixin sidebar-shrink(){
-        .ch-navMenu{
-            width: 52px;
-             li {
-                a.ch-sidebar-list-link{
-                    span,b{
-                        display: none;
-                    }
-                }
-                ul.sidebar-childlist{
-                    display: none !important;
+    .menu-collapsed {
+        width: 52px;
+            li {
+            a.ch-sidebar-list-link{
+                span,b{
+                    display: none;
                 }
             }
-            
+            ul.sidebar-childlist{
+                display: none !important;
+            }
         }
-    }
-
-    @media (max-width: 1000px) {
-          @include sidebar-shrink(); 
     }
 }
 
