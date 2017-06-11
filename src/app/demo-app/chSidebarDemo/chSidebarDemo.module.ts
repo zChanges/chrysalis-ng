@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { NavMenudemoComponent } from './navMenudemo.component';
+import { ChSidebarDemoComponent } from './chSidebarDemo.component';
 import { ChrysalisNgModule } from './../../export';
-
 @NgModule({
   imports: [
     CommonModule,
     ChrysalisNgModule
   ],
-  declarations: [NavMenudemoComponent]
+  declarations: [ChSidebarDemoComponent]
 })
-export class NavMenudemoModule { }
-
+export class ChSidebarDemoModule { }

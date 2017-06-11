@@ -1,0 +1,53 @@
+@import '../../../assets/config.scss';
+
+.ch-menu{
+    height: 60px;
+    border: 1px solid #ddd;
+    min-width:$resMin;
+    width: 100%;
+    padding: 0 32px 0 40px;
+    box-shadow: 2px 0 3px rgba(0,0,0,0.8);
+    background-color: #282828;
+    color: #fff;
+    a.ch-logo{
+        color: #fff;
+        display: block;
+        font-size: 24px;
+        font-family: "Roboto",sans-serif;
+        float: left;
+        line-height: 60px;
+    }
+    a.ch-collapse{
+        cursor: pointer;
+        display: block;
+        text-decoration: none;
+        line-height: 42px;
+        color: #fff;
+        padding: 0;
+        float: left;
+        margin: 11px 0 0 25px;
+    }
+    .user-profile{
+        float: right;
+        min-width: 230px;
+        margin-top: 25px;
+        ul li{
+            margin: 0px 10px;
+            float: left;
+            cursor: pointer;
+        }
+    }
+}
+
+@mixin mixMenu() {
+    .ch-menu{
+        padding: 0 20px 0 10px;
+        .user-profile{
+            min-width: 130px;
+        }
+    }
+}
+
+@media (max-width: 500px){
+     @include mixMenu();
+}

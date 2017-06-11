@@ -4,7 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Components
 
-- [x] navMenu
+- [x] sidebar
+- [ ] navMenu
 
 ## Build
 * Run serve: `npm start`

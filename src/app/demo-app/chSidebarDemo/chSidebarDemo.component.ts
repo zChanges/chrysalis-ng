@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-navMenudemo',
-  templateUrl: './navMenudemo.component.html',
-  styleUrls: ['./navMenudemo.component.scss']
+  selector: 'ch-SidebarDemo',
+  templateUrl: './chSidebarDemo.component.html',
+  styleUrls: ['./chSidebarDemo.component.scss']
 })
-export class NavMenudemoComponent implements OnInit {
-  menuList: any[];
+export class ChSidebarDemoComponent implements OnInit {
+  menuList= [];
   constructor() { }
 
   ngOnInit() {

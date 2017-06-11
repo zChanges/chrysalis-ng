@@ -8,10 +8,16 @@ html, body {
   min-height: 100%;
   min-width: $resMin;
   margin: 0px;
+
 }
 ul{
   padding: 0px;
+  margin: 0px;
 }
 li{
   list-style: none;
+}
+a{
+  text-decoration: none !important;
+  cursor: pointer;
 }

@@ -1,2 +1,5 @@
-export * from './navMenudemo/navMenudemo.module';
-export * from './navMenudemo/navMenudemo.component';
+export * from './chSidebarDemo/chSidebarDemo.component';
+export * from './chSidebarDemo/chSidebarDemo.module';
+
+export * from './chNavMenuDemo/chNavMenuDemo.module';
+export * from './chNavMenuDemo/chNavMenuDemo.component';
