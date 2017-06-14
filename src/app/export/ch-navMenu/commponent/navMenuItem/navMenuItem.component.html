@@ -1,0 +1,32 @@
+<ul class="ch-bar">
+  <li class="ch-dropdown-menu" *ngFor="let item of menubarList" (click)="toggleMenu($event)">
+    <a><i *ngIf="item.icon" class="fa {{item.icon}}"></i>{{item.title}}</a>
+    <div class="ch-dropdown-toggle hide" #dropdownMenu>
+        <ul>
+          <li *ngFor="let option of item.options">
+            <a>{{option}}</a>
+          </li>
+        </ul>
+    </div>
+  </li>
+</ul>
+
+<!--<ul class="nav navbar-nav">
+			<li class="active"><a href="#">iOS</a></li>
+			<li><a href="#">SVN</a></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					Java 
+					<b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="#">jmeter</a></li>
+					<li><a href="#">EJB</a></li>
+					<li><a href="#">Jasper Report</a></li>
+					<li class="divider"></li>
+					<li><a href="#">分离的链接</a></li>
+					<li class="divider"></li>
+					<li><a href="#">另一个分离的链接</a></li>
+				</ul>
+			</li>
+		</ul>-->

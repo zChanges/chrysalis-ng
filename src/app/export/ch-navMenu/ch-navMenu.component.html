@@ -2,10 +2,28 @@
   <a class="ch-logo">Chrysalis-ng</a>
   <a class="ch-collapse fa  fa-align-justify"></a>
   <div class="user-profile">
-    <ul>
-      <li class="fa fa-bell-o"></li>
-      <li class="fa fa-envelope-o"></li>
-      <li class="user">用户</li>
-    </ul>
+    <!--<ul class="ch-bar">
+      <li class="ch-dropdown-menu" (click)="toggleMenu()">
+        <a> 
+          <i class="fa fa-bell-o"></i>
+        </a>
+        <div class="ch-dropdown-toggle hide" #dropdownMenu>
+            <ul>
+              <li><a>Huge</a></li>
+              <li><a>Normal</a></li>
+              <li><a>Small</a></li>
+            </ul>
+        </div>
+      </li>
+      <li>
+        <a> 
+          <i class="fa fa-envelope-o"></i>
+        </a>
+      </li>
+      <li class="user">
+        <a>用户</a>
+      </li>
+    </ul>-->
+    <ch-navMenuItem [menubarList]="menubarList"></ch-navMenuItem>
   </div>
 </div>

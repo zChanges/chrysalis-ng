@@ -1,0 +1,43 @@
+ul.ch-bar {
+    float: left;
+    li{
+        float: left;
+        position: relative;
+        &:hover{
+            background: #264556
+        }
+        a{
+            float: left;
+            padding: 20px;
+            cursor: pointer;
+        }
+    }
+    a{
+       color: #fff;   
+    }
+}
+
+.ch-dropdown-toggle {
+    position: absolute;
+    top:58px;
+    right: 0px;
+    ul{
+        float: left;
+        width: 100%;
+        border:1px solid rgba(0,0,0,.15);
+        background: #fff;
+        li{
+            margin: 0px;
+            width: 100%;
+            // padding: 0px 10px;
+            text-align: center;
+            border-bottom: 1px solid #f4f4f4;
+            a{
+                color:#444;
+            }
+            &:hover {
+                background: #f4f4f4;
+            }
+        }
+    }
+}
