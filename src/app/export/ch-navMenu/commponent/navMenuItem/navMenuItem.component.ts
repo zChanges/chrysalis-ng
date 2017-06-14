@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef, HostListener, Input } from '@angular/core';
 import * as $ from 'jquery';
-import * as bootstrap from 'bootstrap';
+// import * as bootstrap from 'bootstrap';
 @Component({
   selector: 'ch-navMenuItem',
   templateUrl: './navMenuItem.component.html',
@@ -21,7 +21,7 @@ export class NavMenuItemComponent {
 
   toggleMenu(event) {
     const childBar = $(event.currentTarget).find('.ch-dropdown-toggle');
-    $('.ch-dropdown-toggle').addClass('hide');
+    $(event.currentTarget).siblings().find('.ch-dropdown-toggle').addClass('hide');
     $(childBar).toggleClass('hide');
   }
 

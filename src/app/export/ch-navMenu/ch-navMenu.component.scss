@@ -6,7 +6,6 @@
     min-width:$resMin;
     width: 100%;
     padding: 0 32px 0 40px;
-    // box-shadow: 2px 0 3px rgba(0,0,0,0.8);
     background-color: #002538;
     color: #fff;
     a.ch-logo{
@@ -29,57 +28,6 @@
         float: right;
         height: 60px;
         min-width: 230px;
-        // ul{
-        //     float: left;
-        //     li{
-        //        float: left;
-        //     //    padding: 20px;
-        //     //    cursor: pointer;
-        //        position: relative;
-        //        &:hover{
-        //            background: #264556
-        //        }
-        //         a{
-        //             float: left;
-        //             padding: 20px;
-        //             cursor: pointer;
-        //         }
-        //     }
-        // }
-        // a{
-        //     color: #fafafa; 
-        //     opacity: 0.8;
-        //     &:hover {
-        //         color: #fff; 
-        //         opacity: 1;
-        //     }
-        // }
-
-        // .ch-dropdown-toggle {
-        //     position: absolute;
-        //     top:58px;
-        //     right: 0px;
-        //     ul{
-        //         float: left;
-        //         width: 100%;
-        //         border:1px solid rgba(0,0,0,.15);
-        //         background: #fff;
-        //         li{
-        //             margin: 0px;
-        //             width: 100%;
-        //             padding: 0px 20px;
-        //             text-align: center;
-        //             border-bottom: 1px solid #f4f4f4;
-        //             a{
-        //                 color:#444
-        //             }
-        //             &:hover {
-        //                 background: #f4f4f4;
-        //             }
-        //         }
-        //     }
-        // }
-
     }
     a{
        color: #fff;   
