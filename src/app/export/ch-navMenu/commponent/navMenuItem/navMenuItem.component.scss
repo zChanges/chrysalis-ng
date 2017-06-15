@@ -6,7 +6,7 @@ ul.ch-bar {
         &:hover{
             background: #264556
         }
-        a{
+        a.ch-menu-titel{
             float: left;
             padding: 20px;
             cursor: pointer;
@@ -24,13 +24,19 @@ ul.ch-bar {
     ul{
         float: left;
         width: 100%;
+        min-width: 150px;
         border:1px solid rgba(0,0,0,.15);
         background: #fff;
+        border-radius: 4px;
         li{
             margin: 0px;
             width: 100%;
-            // padding: 0px 10px;
-            text-align: center;
+            padding: {
+                left:30px;
+                top:13px;
+                bottom: 13px;
+            };
+            text-align: left;
             border-bottom: 1px solid #f4f4f4;
             a{
                 color:#444;
