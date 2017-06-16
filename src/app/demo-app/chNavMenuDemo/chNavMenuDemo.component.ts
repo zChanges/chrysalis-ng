@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-chNavMenuDemo',
+  selector: 'ch-navMenuDemo',
   templateUrl: './chNavMenuDemo.component.html',
   styleUrls: ['./chNavMenuDemo.component.css']
 })

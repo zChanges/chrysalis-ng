@@ -1,0 +1,8 @@
+@import '../assets/config.scss';
+.leftSidebar{
+    width: 200px;
+    position: fixed;
+    height: 100%;
+    background: $MainColor;
+    padding-top: 30px;
+}

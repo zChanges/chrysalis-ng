@@ -7,6 +7,7 @@ import { ChrysalisNgModule } from './../../export';
     CommonModule,
     ChrysalisNgModule
   ],
+  exports: [ChSidebarDemoComponent],
   declarations: [ChSidebarDemoComponent]
 })
 export class ChSidebarDemoModule { }

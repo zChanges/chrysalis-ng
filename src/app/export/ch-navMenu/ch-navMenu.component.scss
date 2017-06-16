@@ -2,11 +2,10 @@
 
 .ch-menu{
     height: 60px;
-    border: 1px solid #ddd;
     min-width:$resMin;
     width: 100%;
     padding: 0 32px 0 40px;
-    background-color: #002538;
+    background-color: $MainColor;
     color: #fff;
     a.ch-logo{
         display: block;
@@ -38,9 +37,12 @@
 
 @mixin mixMenu() {
     .ch-menu{
-        padding: 0 20px 0 10px;
+        padding: 0 10px 0 10px;
         .user-profile{
             min-width: 130px;
+        }
+        a.ch-collapse{
+           margin-left: 10px; 
         }
     }
 }

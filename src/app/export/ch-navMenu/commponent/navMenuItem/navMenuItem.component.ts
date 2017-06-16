@@ -10,7 +10,7 @@ export class NavMenuItemComponent {
   // @ViewChild('dropdownMenu') menu: ElementRef;
   @Input() menubarList: any[];
   constructor(private elementRef: ElementRef) { };
-  
+
   @HostListener('document:click', ['$event.target'])
   domClick(targetElement) {
     const isfocusDoc = this.elementRef.nativeElement.contains(targetElement);

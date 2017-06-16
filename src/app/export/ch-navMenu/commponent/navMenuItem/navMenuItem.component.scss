@@ -19,7 +19,7 @@ ul.ch-bar {
 
 .ch-dropdown-toggle {
     position: absolute;
-    top:58px;
+    top:60px;
     right: 0px;
     ul{
         float: left;
@@ -46,4 +46,14 @@ ul.ch-bar {
             }
         }
     }
+}
+
+@mixin minBarTitel() {
+    .ch-menu-titel{
+        padding: 20px 10px !important;
+    }
+}
+
+@media (max-width: 500px){
+    @include minBarTitel();
 }

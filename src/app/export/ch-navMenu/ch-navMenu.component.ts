@@ -10,12 +10,9 @@ export class ChNavMenuComponent implements OnInit {
 
   ngOnInit() {
     this.menubarList = [
-      {icon: 'fa-bell-o', options: ['Normal', 'Normal', 'Small'], },
-      {icon: 'fa-envelope-o', options: ['Normal', 'Normal', 'Small'] },
-      { options: ['登录', '退出'], title: 'zChange' }
-    ];
+        {icon: 'fa-bell-o', options: ['Normal', 'Normal', 'Small'], },
+        {icon: 'fa-envelope-o', options: ['Normal', 'Normal', 'Small'] },
+        { options: ['登录', '退出'], title: 'zChange' }
+      ];
   }
-
-
-
 }

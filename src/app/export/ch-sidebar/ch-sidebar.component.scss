@@ -1,7 +1,7 @@
 @import '../../../assets/config.scss';
 .ch-navMenu {
-    background: #1c2b36;
-    width: auto;
+    background: $MainColor;
+    height: 100%;
 }
 :host /deep/{
     li{
