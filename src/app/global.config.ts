@@ -1,4 +1,4 @@
 export const layoutSize = {
-    widthCollapseSidebar: 1200,
+    widthCollapseSidebar: 750,
     widthHideSidebar: 500
 }

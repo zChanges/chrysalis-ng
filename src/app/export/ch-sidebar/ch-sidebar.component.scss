@@ -1,4 +1,9 @@
 @import '../../../assets/config.scss';
+.ch-leftMenu{
+    width: 200px;
+    height: 100%;
+    position: fixed;
+}
 .ch-navMenu {
     background: $MainColor;
     height: 100%;

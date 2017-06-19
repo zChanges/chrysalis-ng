@@ -1,8 +1,13 @@
-@import '../assets/config.scss';
-.leftSidebar{
-    width: 200px;
-    position: fixed;
-    height: 100%;
-    background: $MainColor;
-    padding-top: 30px;
+.content{
+    margin-left:200px; 
+    padding: 20px 40px;
+    // flex: 1 1 auto;
+    // display: flex;
+    // overflow-y: auto;
+}
+
+@media (max-width: 750px){
+    .content{
+        margin-left: 50px;
+    }
 }

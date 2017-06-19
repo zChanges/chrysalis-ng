@@ -9,7 +9,8 @@ import { ChrysalisNgModule } from './export';
 import { routes } from './app.routing';
 import {
   ChSidebarDemoModule,
-  ChNavMenuDemoModule
+  ChNavMenuDemoModule,
+  ChPageDemoModule
 } from './demo-app';
 
 
@@ -25,7 +26,8 @@ import {
     HttpModule,
     ChrysalisNgModule,
     ChSidebarDemoModule,
-    ChNavMenuDemoModule
+    ChNavMenuDemoModule,
+    ChPageDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
