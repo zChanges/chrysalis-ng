@@ -1,8 +1,8 @@
 <ul class="pagination">
-  <li><a><span>{{preLink}}</span></a></li>
-  <li><a>1</a></li>
-  <li><a>...</a></li>
-  <li><a ></a></li>
-  <li><a>...</a></li>
-  <li><a><span>{{nextLink}}</span></a></li>
+  <li *ngIf="pageIndex > 1" (click)="skipPre()"><a><span>{{preLink}}</span></a></li>
+  <li *ngIf="pageIndex > 5"><a>1</a></li>
+  <li *ngIf="pageIndex > 5"><a>...</a></li>
+  <li *ngFor="let item of showPages" [ngClass]="{'active': item == pageIndex}"><a >{{item}}</a></li>
+  <li *ngIf="showPages[showPages.length - 1] < totalPage"><a>...</a></li>
+  <li *ngIf="pageIndex < totalPage" (click)="skipNext()"><a><span>{{nextLink}}</span></a></li>
 </ul>

@@ -1,37 +1,68 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'ch-pagination',
   templateUrl: './ch-pagination.component.html',
   styleUrls: ['./ch-pagination.component.scss']
 })
-export class ChPaginationComponent implements OnInit {
-  @Input() total = 0;
+export class ChPaginationComponent {
+  @Input() totalNumber = 100;
   @Input() pageIndex = 1;
   @Input() preLink = '«';
   @Input() nextLink = '»';
   @Input() showPages = [];
-  constructor() { }
+  @Input() pageSize: number = 10;
+  count = 5;
+  totalPage: number;
+  constructor() {
+    this.createPageArray();
+    this.totalPage = this.getPageTotal();
+  }
 
-  ngOnInit() {
+  ngOnChanges() {
+    this.totalPage = this.getPageTotal();
+  }
+
+  skipPre() {
+    if (this.hasPre) {
+      this.pageIndex = this.pageIndex - 1;
+    }
+  }
+
+  skipNext() {
+    if (this.hasNext) {
+      this.pageIndex = this.pageIndex + 1;
+      this.createPageArray();
+    }
   }
 
   createPageArray() {
-    // if (!this.totalPage) {
-    //   this.showPages = [];
-    //   return;
-    // }
-
-    // if (this.totalPage <= this.maxItems) {
-    //   this.showPages = new Array<number>(this.totalPage).fill(0).map((_, i) => i + 1);
-    //   return;
-    // }
-    // this.showPages = this.extractRange();
-    this.showPages = new Array<number>()
+    const index = this.pageIndex;
+    if (index < this.count) {
+      this.showPages = new Array<number>(this.count).fill(index).map((_a, i) => i + 1);
+      return;
+    }
+    this.showPages = this.getPagesRange();
   }
 
-  getPageTotal() {
+  getPagesRange() {
+    const index = this.pageIndex - 2;
+    return new Array<number>(this.count).fill(index).map((_a, i) => _a + i);
+  }
 
+
+
+
+  getPageTotal() {
+    return Math.ceil(this.totalNumber / this.pageSize);
+  }
+
+  hasPre() {
+    return this.pageIndex > 1;
+  }
+
+  hasNext() {
+    return this.pageIndex < this.totalPage;
   }
 
 }
