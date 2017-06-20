@@ -6,3 +6,7 @@ export * from './chNavMenuDemo/chNavMenuDemo.component';
 
 export * from './chPageDemo/chPageDemo.module';
 export * from './chPageDemo/chPageDemo.component';
+
+export * from './chPaginationDemo/chPaginationDemo.module';
+export * from './chPaginationDemo/chPaginationDemo.component';
+

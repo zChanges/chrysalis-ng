@@ -1,11 +1,12 @@
-import { ChSidebarDemoComponent, ChNavMenuDemoComponent, ChPageDemoComponent } from './demo-app';
+import { ChSidebarDemoComponent, ChNavMenuDemoComponent, ChPageDemoComponent, ChPaginationDemoComponent } from './demo-app';
 import { Routes, RouterModule } from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'pager', pathMatch: 'full' },
-  // { path: 'sidebar', component: ChSidebarDemoComponent },
-  // { path: 'navMenu', component: ChNavMenuDemoComponent },
-  { path: 'pager', component: ChPageDemoComponent }
+  { path: '', redirectTo: 'pagination', pathMatch: 'full' },
+  { path: 'sidebar', component: ChSidebarDemoComponent },
+  { path: 'navMenu', component: ChNavMenuDemoComponent },
+  { path: 'pager', component: ChPageDemoComponent },
+  { path: 'pagination', component: ChPaginationDemoComponent }
 ];
 
 // export const AppRoutes = RouterModule.forRoot(routes, { useHash: true });

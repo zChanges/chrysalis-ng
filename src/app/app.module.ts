@@ -10,7 +10,8 @@ import { routes } from './app.routing';
 import {
   ChSidebarDemoModule,
   ChNavMenuDemoModule,
-  ChPageDemoModule
+  ChPageDemoModule,
+  ChPaginationDemoModule
 } from './demo-app';
 
 
@@ -27,7 +28,8 @@ import {
     ChrysalisNgModule,
     ChSidebarDemoModule,
     ChNavMenuDemoModule,
-    ChPageDemoModule
+    ChPageDemoModule,
+    ChPaginationDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
