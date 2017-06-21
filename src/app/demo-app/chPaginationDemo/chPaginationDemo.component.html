@@ -1,1 +1,45 @@
-<ch-pagination></ch-pagination>
+<div class="pagination-content">
+    <h1>pagination</h1>
+    <ch-pagination
+        size='sm'
+        [total]="total"
+        preLink='上一页'
+        nextLink='下一页'
+        [pageSize]='pageSize'
+        (changePageIndex)="onChangePageIndex($event)"
+    ></ch-pagination>    
+    <pre>
+    'sm': sm
+    'pageIndex': {{pageIndex}}
+    'total' : {{total}}
+    'pageSize': {{pageSize}}
+    </pre>
+
+    <ch-pagination
+        total="500"
+        pageIndex = '1'
+        pageSize='10'
+        (changePageIndex)="onChangePageIndex($event)"
+    ></ch-pagination>    
+    <pre>
+    'pageIndex': {{pageIndex}}
+    'total' : 500
+    'pageSize': 10
+    </pre>
+
+    <ch-pagination
+        size='lg'
+        total="101"
+        pageIndex = '5'
+        pageSize='15'
+        (changePageIndex)="onChangePageIndex($event)"
+    ></ch-pagination>    
+    <pre>
+    'sm': lg
+    'pageIndex': {{pageIndex}}
+    'total' : 50
+    'pageSize': 15
+    </pre>
+</div>
+
+

@@ -7,6 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [x] sidebar
 - [x] navMenu
 - [x] pager
+- [x] pagination
 
 ## Build
 * Run serve: `npm start`
