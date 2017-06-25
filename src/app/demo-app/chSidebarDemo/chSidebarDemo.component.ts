@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// import { ImenuLeft } from '../../dataInterface';
 
 @Component({
   selector: 'ch-SidebarDemo',
@@ -6,37 +7,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chSidebarDemo.component.scss']
 })
 export class ChSidebarDemoComponent implements OnInit {
-  menuList= [];
+  menuList = [];
   constructor() { }
 
   ngOnInit() {
     this.menuList = [
       {
-        icon: 'glyphicon glyphicon-home', title: 'navMenu', route: 'navMenu',
+        title: 'Navigation', icon: 'fa fa-navicon',
         children: [
-          {  title: 'child1', route: 'child' ,
-          children: [
-            {  title: 'child1-1', route: 'child' },
-            {  title: 'child1-2', route: 'child' }
-          ]
-        },
-          {  title: 'child', route: 'child' }
+          { title: 'navMenu', route: '/navMenu' },
+          { title: 'sidebar', route: '/sidebar' }
         ]
       },
       {
-        icon: 'glyphicon glyphicon-home', title: 'btn', route: 'btn'
-      },
-      {
-        icon: 'glyphicon glyphicon-home', title: 'navMenu', route: 'navMenu',
+        title: 'Data', icon: 'fa fa-table',
         children: [
-          {  title: 'child', route: 'child' },
-          {  title: 'child', route: 'child' }
+          { title: 'pager', route: '/pager' },
+          { title: 'pagination', route: '/pagination' }
         ]
-      },
-      {
-        icon: 'glyphicon glyphicon-home', title: 'btn', route: 'btn'
       }
     ];
   }
 
-}
+};
