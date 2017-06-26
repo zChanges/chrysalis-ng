@@ -1,5 +1,5 @@
 <div class="ch-leftMenu">
-    <ul class="ch-navMenu" [ngClass]="{'menu-collapsed': isCollapse}">
+    <ul class="ch-navMenu" [ngClass]="{'menu-collapsed': isCollapse | async}">
         <sidebarItem [menuItem]="item" (toggleCollapse)="onToggleCollapse($event)" [isCollapse]="isCollapse" *ngFor="let item of menuList"></sidebarItem>
     </ul>
 </div>

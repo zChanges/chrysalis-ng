@@ -7,6 +7,10 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ChrysalisNgModule } from './export';
 import { routes } from './app.routing';
+
+import { StoreModule } from '@ngrx/store';
+import { sidebarReducer } from './reducers/re-sidebar';
+
 import {
   ChSidebarDemoModule,
   ChNavMenuDemoModule,
@@ -23,6 +27,7 @@ import {
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
+    StoreModule.provideStore({ sidebar: sidebarReducer }),
     FormsModule,
     HttpModule,
     ChrysalisNgModule,

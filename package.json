@@ -20,6 +20,8 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "@ngrx/core": "^1.2.0",
+    "@ngrx/store": "^2.2.2",
     "bootstrap-sass": "^3.3.7",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",

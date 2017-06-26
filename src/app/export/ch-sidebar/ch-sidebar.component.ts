@@ -1,5 +1,8 @@
 import { Component, OnInit, HostListener, Input } from '@angular/core';
 import { layoutSize } from './../../global.config';
+import { Store } from '@ngrx/store';
+import {NORMAL, COLLAPSED} from '../../reducers/re-sidebar';
+
 
 @Component({
   selector: 'ch-sidebar',
@@ -9,28 +12,31 @@ import { layoutSize } from './../../global.config';
 export class ChSidebarComponent implements OnInit {
 
   @Input() menuList: any[];
-  isCollapse = false;
+  isCollapse: any;
   lockState = false;
+
+  constructor(private Store: Store<any>) { }
 
   @HostListener('window:resize')
   onwindwoResize(): void {
     if (this.lockState) { return; };
-    const isSidebarCollapse = this.isSidebarCollapse();
-    if (this.isCollapse !== isSidebarCollapse) {
-      this.isCollapse = isSidebarCollapse;
-    }
+    // const isSidebarCollapse = this.isSidebarCollapse();
+    // if (this.isCollapse !== isSidebarCollapse) {
+    //   this.isCollapse = isSidebarCollapse;
+    // }
+    this.sidebarCollapse();
   }
 
   ngOnInit() {
-    this.isCollapse = this.isSidebarCollapse();
+    this.isCollapse = this.Store.select('sidebar');
   }
 
-  private isSidebarCollapse(): boolean {
-    return window.innerWidth <= layoutSize.widthCollapseSidebar;
+  private sidebarCollapse() {
+    window.innerWidth <= layoutSize.widthCollapseSidebar ? this.Store.dispatch({ type: NORMAL }) : this.Store.dispatch({ type: COLLAPSED });
+    // return window.innerWidth <= layoutSize.widthCollapseSidebar;
   }
 
-  onToggleCollapse (event) {
-    this.isCollapse = event;
+  onToggleCollapse(event) {
     this.lockState = !event;
   }
 
