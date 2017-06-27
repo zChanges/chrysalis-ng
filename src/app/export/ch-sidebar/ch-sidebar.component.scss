@@ -7,6 +7,8 @@
 .ch-navMenu {
     background: $MainColor;
     height: 100%;
+    width: 200px;
+    transition: width 0.5s ease;
 }
 :host /deep/{
     li{
@@ -69,7 +71,9 @@
 
     .menu-collapsed {
         width: 52px;
-            li {
+        li {
+            width: 52px;
+            transition: width 0.5s ease;
             a.ch-sidebar-list-link{
                 span,b{
                     display: none;

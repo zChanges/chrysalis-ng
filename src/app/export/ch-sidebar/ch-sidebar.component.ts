@@ -19,25 +19,25 @@ export class ChSidebarComponent implements OnInit {
 
   @HostListener('window:resize')
   onwindwoResize(): void {
-    if (this.lockState) { return; };
-    // const isSidebarCollapse = this.isSidebarCollapse();
-    // if (this.isCollapse !== isSidebarCollapse) {
-    //   this.isCollapse = isSidebarCollapse;
-    // }
+    // if (this.lockState) { return; };
     this.sidebarCollapse();
+    this.Store.select('sidebar').subscribe(data => {
+      console.log(data);
+    });
   }
 
   ngOnInit() {
+    this.sidebarCollapse();
     this.isCollapse = this.Store.select('sidebar');
   }
 
   private sidebarCollapse() {
-    window.innerWidth <= layoutSize.widthCollapseSidebar ? this.Store.dispatch({ type: NORMAL }) : this.Store.dispatch({ type: COLLAPSED });
+    window.innerWidth <= layoutSize.widthCollapseSidebar ? this.Store.dispatch({ type: COLLAPSED }) : this.Store.dispatch({ type: NORMAL });
     // return window.innerWidth <= layoutSize.widthCollapseSidebar;
   }
 
   onToggleCollapse(event) {
-    this.lockState = !event;
+    // this.lockState = !event;
   }
 
 }
