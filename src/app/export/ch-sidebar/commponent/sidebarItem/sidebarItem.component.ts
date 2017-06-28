@@ -1,10 +1,9 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import * as $ from 'jquery';
-import { Subject } from 'rxjs/Subject';
-import { layoutSize } from '../../../../global.config';
-
 import { Store } from '@ngrx/store';
 import { NORMAL, COLLAPSED } from '../../../../reducers/re-sidebar';
+import { layoutSize } from '../../../../global.config';
+
 
 @Component({
   selector: 'sidebarItem',
@@ -19,24 +18,12 @@ export class SidebarItemComponent {
   constructor(private Store: Store<any>) { }
 
   onToggleSub(event) {
-
-
     if (this.sidebarCollapse()) {
       this.Store.dispatch({ type: NORMAL });
     }
-
-    const destroy = this.Store.select('sidebar').subscribe(data => {
-      if (data) {
-        const sildebar = $(event.currentTarget.nextSibling).next();
-        this.arrows = !this.arrows;
-        sildebar.stop().slideToggle();
-      }
-    });
-    destroy.unsubscribe();
-
-
-
-
+    const sildebar = $(event.currentTarget.nextSibling).next();
+    this.arrows = !this.arrows;
+    sildebar.stop().slideToggle();
   }
 
   private sidebarCollapse() {
