@@ -20,6 +20,7 @@ export class SidebarItemComponent {
   onToggleSub(event) {
     if (this.sidebarCollapse()) {
       this.Store.dispatch({ type: NORMAL });
+      this.toggleCollapse.emit(false);
     }
     const sildebar = $(event.currentTarget.nextSibling).next();
     this.arrows = !this.arrows;

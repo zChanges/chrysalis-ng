@@ -16,14 +16,20 @@ export class ChSidebarComponent implements OnInit {
 
   @Input() menuList: any[];
   isCollapse: any;
-  lockState = false;
+  lockState = true;
   resizeSub: Subject<any> = new Subject<any>();
 
   constructor(private Store: Store<any>) { }
 
   @HostListener('window:resize')
   onwindwoResize(): void {
-    this.resizeSub.next();
+    if (this.lockState) {
+      this.resizeSub.next();
+    } else {
+      if (!this.isSidebarCollapse()){
+        this.lockState = true;
+      }
+    }
   }
 
 
@@ -32,8 +38,8 @@ export class ChSidebarComponent implements OnInit {
   ngOnInit() {
     this.sidebarCollapse();
     this.isCollapse = this.Store.select('sidebar');
-    this.resizeSub.throttleTime(500).subscribe(() => {
-      // console.log(1)
+
+    this.resizeSub.throttleTime(200).subscribe(() => {
       this.sidebarCollapse();
     })
   }
@@ -42,8 +48,12 @@ export class ChSidebarComponent implements OnInit {
     window.innerWidth <= layoutSize.widthCollapseSidebar ? this.Store.dispatch({ type: COLLAPSED }) : this.Store.dispatch({ type: NORMAL });
   }
 
+  private isSidebarCollapse() {
+    return window.innerWidth <= layoutSize.widthCollapseSidebar;
+  }
+
   onToggleCollapse(event) {
-    // this.lockState = !event;
+    this.lockState = event;
   }
 
 
