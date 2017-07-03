@@ -1,4 +1,4 @@
-import { ChSidebarDemoComponent, ChNavMenuDemoComponent, ChPageDemoComponent, ChPaginationDemoComponent } from './demo-app';
+import { ChSidebarDemoComponent, ChNavMenuDemoComponent, ChPageDemoComponent, ChPaginationDemoComponent, ChTabsDemoComponent } from './demo-app';
 import { Routes, RouterModule } from '@angular/router';
 
 export const routes: Routes = [
@@ -6,7 +6,8 @@ export const routes: Routes = [
   { path: 'sidebar', component: ChSidebarDemoComponent },
   { path: 'navMenu', component: ChNavMenuDemoComponent },
   { path: 'pager', component: ChPageDemoComponent },
-  { path: 'pagination', component: ChPaginationDemoComponent }
+  { path: 'pagination', component: ChPaginationDemoComponent },
+  { path: 'tabs', component: ChTabsDemoComponent}
 ];
 
 // export const AppRoutes = RouterModule.forRoot(routes, { useHash: true });

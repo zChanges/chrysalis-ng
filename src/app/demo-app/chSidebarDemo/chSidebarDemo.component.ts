@@ -16,7 +16,8 @@ export class ChSidebarDemoComponent implements OnInit {
         title: 'Navigation', icon: 'fa fa-navicon',
         children: [
           { title: 'navMenu', route: '/navMenu' },
-          { title: 'sidebar', route: '/sidebar' }
+          { title: 'sidebar', route: '/sidebar' },
+          { title: 'tabs', route: '/tabs' }
         ]
       },
       {

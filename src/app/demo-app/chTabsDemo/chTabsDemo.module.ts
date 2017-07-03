@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChPageDemoComponent } from './chPageDemo.component';
+import { ChTabsDemoComponent } from './chTabsDemo.component';
 import { ChrysalisNgModule } from './../../export';
+
 @NgModule({
   imports: [
     CommonModule,
     ChrysalisNgModule
   ],
-  exports: [ ChPageDemoComponent ],
-  declarations: [ ChPageDemoComponent]
+  declarations: [ChTabsDemoComponent],
+  exports: [ChTabsDemoComponent]
 })
-export class ChPageDemoModule { }
+export class ChTabsDemoModule { }

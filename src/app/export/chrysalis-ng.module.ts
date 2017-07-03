@@ -5,6 +5,7 @@ import { ChSidebarModule } from './ch-sidebar';
 import { ChNavMenuModule } from './ch-navMenu';
 import { ChPagerModule } from './ch-pager';
 import { ChPaginationModule } from './ch-pagination';
+import { ChTabsModule } from './ch-tabs/ch-tabs.module';
 
 
 @NgModule({
@@ -13,13 +14,15 @@ import { ChPaginationModule } from './ch-pagination';
     ChSidebarModule,
     ChNavMenuModule,
     ChPagerModule,
-    ChPaginationModule
+    ChPaginationModule,
+    ChTabsModule
   ],
   exports: [
     ChSidebarModule,
     ChNavMenuModule,
     ChPagerModule,
-    ChPaginationModule
+    ChPaginationModule,
+    ChTabsModule
   ],
   declarations: []
 })

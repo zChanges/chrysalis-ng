@@ -1,0 +1,18 @@
+<ul class="nav nav-tabs ">  
+    <li *ngFor="let tab of tabs" [ngClass]="{active: tab.id == activeTab}" [class.disabled]="tab.disable">
+      <a (click)="onSelect(tab.id)">
+        <ng-template *ngIf="!tab.title" [ngTemplateOutlet]="tab.titleTpl?.templateRef"> </ng-template>
+        <span *ngIf="tab.title">{{tab.title}}</span>
+      </a>  
+    </li>  
+</ul>  
+<div class="tab-content">   
+  <ng-container *ngFor="let tab of tabs">
+    <div class="tab-pane active" *ngIf="tab.id == activeTab">  
+       <ng-template [ngTemplateOutlet]="tab?.contentTpl?.templateRef"> </ng-template>
+    </div> 
+  </ng-container>
+</div>  
+
+
+

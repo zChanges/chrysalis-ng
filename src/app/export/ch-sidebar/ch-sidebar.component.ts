@@ -26,7 +26,7 @@ export class ChSidebarComponent implements OnInit {
     if (this.lockState) {
       this.resizeSub.next();
     } else {
-      if (!this.isSidebarCollapse()){
+      if (!this.isSidebarCollapse()) {
         this.lockState = true;
       }
     }

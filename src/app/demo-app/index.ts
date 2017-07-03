@@ -10,3 +10,6 @@ export * from './chPageDemo/chPageDemo.component';
 export * from './chPaginationDemo/chPaginationDemo.module';
 export * from './chPaginationDemo/chPaginationDemo.component';
 
+export * from './chTabsDemo/chTabsDemo.module';
+export * from './chTabsDemo/chTabsDemo.component';
+

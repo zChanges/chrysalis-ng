@@ -1,9 +1,9 @@
 <ch-navMenuDemo></ch-navMenuDemo>
-<div class="content-body">
-<ch-SidebarDemo class="leftSidebar"></ch-SidebarDemo>
-<div class="content">
-    <div class="body-content">
-        <router-outlet></router-outlet>
+<div class="content-body" [ngClass]="{'body-collapsed': !(isCollapse | async)}">
+    <ch-SidebarDemo class="leftSidebar"></ch-SidebarDemo>
+    <div class="content">
+        <div class="body-content" >
+            <router-outlet></router-outlet>
+        </div>
     </div>
-</div>
 </div>

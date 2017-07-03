@@ -4,6 +4,7 @@
         margin-left:200px; 
         padding: 20px 40px;
         display: flex;
+        transition: left 0.5s ease;
         .body-content{
             width: 100%;
             height: 100%;
@@ -11,9 +12,19 @@
         }
     }
 }
+@mixin body-collapsed() {
+    .content{
+        margin-left: 50px !important;
+    }
+}
 
 @media (max-width: 750px){
-    .content{
-        margin-left: 50px;
-    }
+     @include body-collapsed();
+}
+
+
+
+
+.body-collapsed{
+    @include body-collapsed();
 }

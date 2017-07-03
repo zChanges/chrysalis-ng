@@ -15,7 +15,8 @@ import {
   ChSidebarDemoModule,
   ChNavMenuDemoModule,
   ChPageDemoModule,
-  ChPaginationDemoModule
+  ChPaginationDemoModule,
+  ChTabsDemoModule
 } from './demo-app';
 
 
@@ -26,7 +27,7 @@ import {
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes,{useHash: true}),
     StoreModule.provideStore({ sidebar: sidebarReducer }),
     FormsModule,
     HttpModule,
@@ -34,7 +35,8 @@ import {
     ChSidebarDemoModule,
     ChNavMenuDemoModule,
     ChPageDemoModule,
-    ChPaginationDemoModule
+    ChPaginationDemoModule,
+    ChTabsDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
