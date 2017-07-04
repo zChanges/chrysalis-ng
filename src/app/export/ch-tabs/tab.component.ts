@@ -13,7 +13,6 @@ export class ChTabComponent implements AfterContentInit {
   @ContentChild(TabContentDirective) contentTpl: TabContentDirective;
   @ContentChild(TabTitleDirective) titleTpl: TabTitleDirective;
   constructor() {
-    
   }
 
   ngAfterContentInit() {
