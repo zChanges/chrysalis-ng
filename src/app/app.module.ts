@@ -10,6 +10,11 @@ import { routes } from './app.routing';
 
 import { StoreModule } from '@ngrx/store';
 import { sidebarReducer } from './reducers/re-sidebar';
+import {
+  SharedCaseComponent,
+  ExampleCodeComponent,
+  DemoConfigService
+} from './shared';
 
 import {
   ChSidebarDemoModule,
@@ -23,7 +28,9 @@ import {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SharedCaseComponent,
+    ExampleCodeComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +45,7 @@ import {
     ChPaginationDemoModule,
     ChTabsDemoModule
   ],
-  providers: [],
+  providers: [DemoConfigService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

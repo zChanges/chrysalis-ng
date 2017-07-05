@@ -3,7 +3,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/_bootstrap';
 @import '~font-awesome/css/font-awesome.css';
 @import './assets/config.scss';
-
+@import '~highlight.js/styles/github';
 html, body {
   min-height: 100%;
   min-width: $resMin;

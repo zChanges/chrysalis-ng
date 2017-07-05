@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChTabsDemoComponent } from './chTabsDemo.component';
 import { ChrysalisNgModule } from './../../export';
-
 @NgModule({
   imports: [
     CommonModule,

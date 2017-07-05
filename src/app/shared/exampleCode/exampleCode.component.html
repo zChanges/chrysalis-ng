@@ -1,22 +1,19 @@
-
 <ch-tabs>
   <ch-tab id="html">
     <ng-template chTabTitle>
         html
     </ng-template>
     <ng-template chTabContent>
-      html
+      <div #html>
+        <pre>{{content.html}}</pre>
+      </div>
     </ng-template>
   </ch-tab>
   <ch-tab id="typescript" title="typescript">
     <ng-template chTabContent>
-      typescript
-    </ng-template>
-  </ch-tab>
-
-  <ch-tab id="scss" title="scss" disable="false">
-    <ng-template chTabContent>
-      scss---
+      <div #typescript>
+        <pre><code class="html">{{content.ts}}</code></pre>
+      </div>
     </ng-template>
   </ch-tab>
 </ch-tabs>

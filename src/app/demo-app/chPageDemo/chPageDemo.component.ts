@@ -1,20 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-chPageDemo',
+  selector: 'chPageDemo',
   templateUrl: './chPageDemo.component.html',
   styleUrls: ['./chPageDemo.component.scss']
 })
-export class ChPageDemoComponent implements OnInit {
+export class ChPageDemoComponent {
   total = 1001;
   pageSize = 10;
   pageIndex = 1;
-  constructor() { }
-
-  ngOnInit() {
-  }
   onPageIndexChange(event) {
     this.pageIndex = event;
   }
-
 }

@@ -15,16 +15,16 @@ export class ChSidebarDemoComponent implements OnInit {
       {
         title: 'Navigation', icon: 'fa fa-navicon',
         children: [
-          { title: 'navMenu', route: '/navMenu' },
-          { title: 'sidebar', route: '/sidebar' },
-          { title: 'tabs', route: '/tabs' }
+          { title: 'navMenu', route: 'component/NavMenu' },
+          { title: 'sidebar', route: 'component/Sidebar' },
+          { title: 'tabs', route: 'component/Tabs' }
         ]
       },
       {
         title: 'Data', icon: 'fa fa-table',
         children: [
-          { title: 'pager', route: '/pager' },
-          { title: 'pagination', route: '/pagination' }
+          { title: 'pager', route: 'component/Pager' },
+          { title: 'pagination', route: 'component/Pagination' }
         ]
       }
     ];
