@@ -16,7 +16,5 @@ export class ChTabComponent implements AfterContentInit {
   }
 
   ngAfterContentInit() {
-    console.log(this.contentTpl)
-     console.log(this.titleTpl)
   }
 }

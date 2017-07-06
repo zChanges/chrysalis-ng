@@ -1,6 +1,8 @@
 # Chrysalis/NG
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1.
+> Chrysalis-ng 用来学习angular4的UI框架。
+
+在线例子link:[https://zchanges.github.io/chrysalis-ng/](https://zchanges.github.io/chrysalis-ng/)
 
 ## Components
 
@@ -8,6 +10,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [x] navMenu
 - [x] pager
 - [x] pagination
+- [x] tabs
 
 ## Build
 * Run serve: `npm start`

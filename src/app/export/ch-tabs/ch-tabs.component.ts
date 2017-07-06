@@ -11,7 +11,6 @@ export class ChTabsComponent implements AfterContentInit {
   @ContentChildren(ChTabComponent) tabs: QueryList<ChTabComponent>;
   constructor() { }
   ngAfterContentInit() {
-    console.log(this.tabs);
     this.activeTab = this.tabs.first.id;
   }
 

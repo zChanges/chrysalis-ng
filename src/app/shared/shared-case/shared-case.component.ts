@@ -22,14 +22,7 @@ export class SharedCaseComponent implements OnInit {
         }).map(cmp => {
           return cmp;
         });
-
-        console.log(this.demoConfigService.components.filter(cmp => {
-          return cmp.name === params.name;
-        }).map(cmp => {
-          return cmp;
-        }))
     });
-
   }
 
 }

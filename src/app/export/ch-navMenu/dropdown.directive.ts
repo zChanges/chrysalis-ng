@@ -10,7 +10,6 @@ export class DropdownDirective {
 
   @HostListener('document:click', ['$event'])
   onDocHostClick($event) {
-    console.log(this.elementRef.nativeElement.contains($event.target));
     const isContains = this.elementRef.nativeElement.contains($event.target);
     if (!isContains) {
       this.active = false;

@@ -9,7 +9,7 @@ import { DropdownDirective } from './dropdown.directive';
   imports: [
     CommonModule
   ],
-  exports: [ChNavMenuComponent, NavMenuItemComponent,DropdownDirective],
+  exports: [ChNavMenuComponent, NavMenuItemComponent, DropdownDirective],
   declarations: [
     ChNavMenuComponent,
     NavMenuItemComponent,

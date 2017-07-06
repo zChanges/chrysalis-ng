@@ -3,9 +3,11 @@
     <a class="ch-menu-titel"><i *ngIf="item.icon" class="fa {{item.icon}}"></i>{{item.title}}</a>
     <div class="ch-dropdown-toggle" #dropdownMenu>
         <ul>
+          <div class="dropTitle">收到 0 条消息通知</div>
           <li *ngFor="let option of item.options">
             <a>{{option}}</a>
           </li>
+          <div class="dropfoot">查看全部消息通知 <i class="fa fa-comment pull-right"></i></div>
         </ul>
     </div>
   </li>
