@@ -16,7 +16,6 @@ export class ChPagerComponent {
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.total = this.getTotalPage();
     this.pageIndex = Math.max(Math.min(this.pageIndex, this.total), 1);
   }
 

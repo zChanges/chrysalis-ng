@@ -1,5 +1,4 @@
 <div class="pagination-content">
-    <h1>pagination</h1>
     <ch-pagination
         size='sm'
         [total]="total"
@@ -8,25 +7,14 @@
         [pageSize]='pageSize'
         (changePageIndex)="onChangePageIndex($event)"
     ></ch-pagination>    
-    <pre>
-    'sm': sm
-    'pageIndex': {{pageIndex}}
-    'total' : {{total}}
-    'pageSize': {{pageSize}}
-    </pre>
-
+    <br/>
     <ch-pagination
         total="500"
         pageIndex = '1'
         pageSize='10'
         (changePageIndex)="onChangePageIndex($event)"
-    ></ch-pagination>    
-    <pre>
-    'pageIndex': {{pageIndex}}
-    'total' : 500
-    'pageSize': 10
-    </pre>
-
+    ></ch-pagination> 
+    <br/>
     <ch-pagination
         size='lg'
         total="101"
@@ -34,15 +22,4 @@
         pageSize='15'
         (changePageIndex)="onChangePageIndex($event)"
     ></ch-pagination>    
-    <pre>
-    'sm': lg
-    'pageIndex': {{pageIndex}}
-    'total' : 50
-    'pageSize': 15
-    </pre>
 </div>
-
-
-
-
-

@@ -2,12 +2,13 @@
 
 .ch-menu{
     height: 60px;
-    position: fixed;
+    // position: fixed;
     min-width:$resMin;
     width: 100%;
     padding: 0 32px 0 40px;
-    background-color: $MainColor;
-    color: #fff;
+    background-color: $Menubackground;
+    color: $Maincolor;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2),0 4px 10px 0 rgba(0,0,0,.14),0 1px 18px 0 rgba(0,0,0,.12);
     z-index: 4;
     a.ch-logo{
         display: block;
@@ -31,7 +32,7 @@
         min-width: 230px;
     }
     a{
-       color: #fff;   
+       color: $Maincolor;   
     }
 
     

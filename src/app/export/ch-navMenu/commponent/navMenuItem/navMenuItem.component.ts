@@ -11,18 +11,18 @@ export class NavMenuItemComponent {
   @Input() menubarList: any[];
   constructor(private elementRef: ElementRef) { };
 
-  @HostListener('document:click', ['$event.target'])
-  domClick(targetElement) {
-    const isfocusDoc = this.elementRef.nativeElement.contains(targetElement);
-    if (!isfocusDoc) {
-      $('.ch-dropdown-toggle').addClass('hide');
-    }
-  }
+  // @HostListener('document:click', ['$event.target'])
+  // domClick(targetElement) {
+  //   const isfocusDoc = this.elementRef.nativeElement.contains(targetElement);
+  //   if (!isfocusDoc) {
+  //     $('.ch-dropdown-toggle').addClass('hide');
+  //   }
+  // }
 
-  toggleMenu(event) {
-    const childBar = $(event.currentTarget).find('.ch-dropdown-toggle');
-    $(event.currentTarget).siblings().find('.ch-dropdown-toggle').addClass('hide');
-    $(childBar).toggleClass('hide');
-  }
+  // toggleMenu(event) {
+  //   const childBar = $(event.currentTarget).find('.ch-dropdown-toggle');
+  //   $(event.currentTarget).siblings().find('.ch-dropdown-toggle').addClass('hide');
+  //   $(childBar).toggleClass('hide');
+  // }
 
 }

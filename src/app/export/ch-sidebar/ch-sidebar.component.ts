@@ -15,6 +15,7 @@ import 'rxjs/add/operator/throttleTime';
 export class ChSidebarComponent implements OnInit {
 
   @Input() menuList: any[];
+  @Input() isFixed = true;
   isCollapse: any;
   lockState = true;
   resizeSub: Subject<any> = new Subject<any>();
@@ -32,16 +33,12 @@ export class ChSidebarComponent implements OnInit {
     }
   }
 
-
-
-
   ngOnInit() {
     this.sidebarCollapse();
     this.isCollapse = this.Store.select('sidebar');
-
     this.resizeSub.throttleTime(200).subscribe(() => {
       this.sidebarCollapse();
-    })
+    });
   }
 
   private sidebarCollapse() {

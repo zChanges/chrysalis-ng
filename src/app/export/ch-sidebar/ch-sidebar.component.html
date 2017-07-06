@@ -1,4 +1,4 @@
-<div class="ch-leftMenu">
+<div class="ch-leftMenu" [ngClass]="{barFixed: isFixed}">
     <ul class="ch-navMenu" [ngClass]="{'menu-collapsed': !(isCollapse | async)}">
         <sidebarItem [menuItem]="item" (toggleCollapse)="onToggleCollapse($event)" [isCollapse]="isCollapse" *ngFor="let item of menuList"></sidebarItem>
     </ul>

@@ -1,7 +1,7 @@
 <ul class="ch-bar">
-  <li class="ch-dropdown-menu" *ngFor="let item of menubarList" (click)="toggleMenu($event)">
+  <li class="ch-dropdown-menu" *ngFor="let item of menubarList" chDropdown>
     <a class="ch-menu-titel"><i *ngIf="item.icon" class="fa {{item.icon}}"></i>{{item.title}}</a>
-    <div class="ch-dropdown-toggle hide" #dropdownMenu>
+    <div class="ch-dropdown-toggle" #dropdownMenu>
         <ul>
           <li *ngFor="let option of item.options">
             <a>{{option}}</a>

@@ -1,22 +1,37 @@
+@import '../../../../../assets/config.scss';
+.open{
+    // background: #212121;
+    .ch-dropdown-toggle{
+        display: block !important;
+    }
+}
 ul.ch-bar {
     float: left;
     li{
         float: left;
         position: relative;
         &:hover{
-            background: #264556
+            background: #eeeeee;
+            color:#212121;
         }
         a.ch-menu-titel{
             float: left;
             padding: 20px;
             cursor: pointer;
         }
+        .ch-dropdown-toggle{
+            display: none;
+        }
     }
     a{
-       color: #fff;   
+       color: $Maincolor;   
     }
 }
-
+.showMenu{
+    .ch-dropdown-toggle{
+        display: block !important;
+    }
+}
 .ch-dropdown-toggle {
     position: absolute;
     top:60px;
@@ -26,7 +41,7 @@ ul.ch-bar {
         width: 100%;
         min-width: 150px;
         border:1px solid rgba(0,0,0,.15);
-        background: #fff;
+        background: $Menubackground;
         border-radius: 4px;
         li{
             margin: 0px;

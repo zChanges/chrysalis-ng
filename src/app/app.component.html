@@ -1,8 +1,10 @@
-<ch-navMenuDemo></ch-navMenuDemo>
+<div class="header">
+    <ch-navMenu [menubarList]="menuList" title='Chrysalis-Ng'></ch-navMenu>
+</div>
 <div class="content-body" [ngClass]="{'body-collapsed': !(isCollapse | async)}">
-    <ch-SidebarDemo class="leftSidebar"></ch-SidebarDemo>
+    <ch-sidebar [menuList]="sidebarList"  class="leftSidebar"></ch-sidebar>
     <div class="content">
-        <div class="body-content" >
+        <div class="body-content">
             <router-outlet></router-outlet>
         </div>
     </div>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { ImenuLeft } from '../../dataInterface';
 
 @Component({
   selector: 'ch-SidebarDemo',
@@ -8,23 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChSidebarDemoComponent implements OnInit {
   menuList = [];
+  isFixed = false;
   constructor() { }
-
   ngOnInit() {
     this.menuList = [
       {
-        title: 'Navigation', icon: 'fa fa-navicon',
+        title: '导航', icon: 'fa fa-navicon',
         children: [
-          { title: 'navMenu', route: 'component/NavMenu' },
-          { title: 'sidebar', route: 'component/Sidebar' },
-          { title: 'tabs', route: 'component/Tabs' }
+          { title: '头部导航', route: 'component/NavMenu' },
+          { title: '侧边导航', route: 'component/Sidebar' },
+          { title: '标签页', route: 'component/Tabs' }
         ]
       },
       {
-        title: 'Data', icon: 'fa fa-table',
+        title: '数据', icon: 'fa fa-table',
         children: [
-          { title: 'pager', route: 'component/Pager' },
-          { title: 'pagination', route: 'component/Pagination' }
+          { title: 'Pager分页', route: 'component/Pager' },
+          { title: 'Pagination分页', route: 'component/Pagination' }
         ]
       }
     ];

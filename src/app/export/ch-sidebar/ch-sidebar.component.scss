@@ -1,15 +1,18 @@
 @import '../../../assets/config.scss';
+.barFixed{
+    position: fixed;
+}
 .ch-leftMenu{
     width: 200px;
     height: 100%;
-    position: fixed;
-    z-index: 5;
+    z-index: 4;
 }
 .ch-navMenu {
-    background: $MainColor;
+    background: $Sidbarbackground;
     height: 100%;
     width: 200px;
     transition: width 0.5s ease;
+    box-shadow: 6px 0 6px rgba(0,0,0,.1);
 }
 :host /deep/{
     li{
@@ -21,7 +24,7 @@
             text-shadow: none;
             font-size: 13px;
             text-decoration: none;
-            color: $white;
+            color: $Maincolor;
             line-height: 42px;
             white-space: nowrap;
             overflow: hidden;
@@ -52,7 +55,7 @@
             }
         }
         .sidebar-childlist{
-            background: #131e26;
+            // background: #131e26;
         }
     }
     .sidebar-childlist{

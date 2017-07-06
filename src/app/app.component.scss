@@ -12,6 +12,11 @@
         }
     }
 }
+.header{
+    width: 100%;
+    position: fixed;
+    z-index: 5;
+}
 @mixin body-collapsed() {
     .content{
         margin-left: 50px !important;

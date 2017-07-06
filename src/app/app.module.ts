@@ -13,6 +13,7 @@ import { sidebarReducer } from './reducers/re-sidebar';
 import {
   SharedCaseComponent,
   ExampleCodeComponent,
+  ExampleContentComponent,
   DemoConfigService
 } from './shared';
 
@@ -31,6 +32,7 @@ import {
     AppComponent,
     SharedCaseComponent,
     ExampleCodeComponent,
+    ExampleContentComponent
   ],
   imports: [
     BrowserModule,

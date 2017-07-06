@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./chPageDemo.component.scss']
 })
 export class ChPageDemoComponent {
-  total = 1001;
+  total = 50;
   pageSize = 10;
   pageIndex = 1;
   onPageIndexChange(event) {
