@@ -13,3 +13,6 @@ export * from './chPaginationDemo/chPaginationDemo.component';
 export * from './chTabsDemo/chTabsDemo.module';
 export * from './chTabsDemo/chTabsDemo.component';
 
+export * from './chBadgeDemo/chBadgeDemo.module';
+export * from './chBadgeDemo/chBadgeDemo.component';
+

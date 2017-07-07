@@ -5,7 +5,8 @@ import { ChSidebarModule } from './ch-sidebar';
 import { ChNavMenuModule } from './ch-navMenu';
 import { ChPagerModule } from './ch-pager';
 import { ChPaginationModule } from './ch-pagination';
-import { ChTabsModule } from './ch-tabs/ch-tabs.module';
+import { ChTabsModule } from './ch-tabs';
+import { ChBadgeModule } from './ch-badge';
 
 
 @NgModule({
@@ -15,14 +16,16 @@ import { ChTabsModule } from './ch-tabs/ch-tabs.module';
     ChNavMenuModule,
     ChPagerModule,
     ChPaginationModule,
-    ChTabsModule
+    ChTabsModule,
+    ChBadgeModule
   ],
   exports: [
     ChSidebarModule,
     ChNavMenuModule,
     ChPagerModule,
     ChPaginationModule,
-    ChTabsModule
+    ChTabsModule,
+    ChBadgeModule
   ],
   declarations: []
 })

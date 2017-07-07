@@ -21,3 +21,11 @@ a{
   text-decoration: none !important;
   cursor: pointer;
 }
+.badgePosition { 
+  position: absolute; 
+  top:14px; 
+  right:6px; 
+} 
+.badge{
+  padding: 3px 6px;
+}

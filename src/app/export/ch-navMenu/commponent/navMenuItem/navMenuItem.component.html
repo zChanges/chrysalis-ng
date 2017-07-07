@@ -1,14 +1,45 @@
 <ul class="ch-bar">
-  <li class="ch-dropdown-menu" *ngFor="let item of menubarList" chDropdown>
-    <a class="ch-menu-titel"><i *ngIf="item.icon" class="fa {{item.icon}}"></i>{{item.title}}</a>
-    <div class="ch-dropdown-toggle" #dropdownMenu>
-        <ul>
-          <div class="dropTitle">收到 0 条消息通知</div>
-          <li *ngFor="let option of item.options">
-            <a>{{option}}</a>
+  <ng-container *ngFor="let menu of menubarList">
+        <li class="ch-dropdown-menu" *ngIf="menu.template" chDropdown>
+
+            <a *ngIf="!menu.downChild" class="ch-menu-titel" [routerLink]="menu.router">
+              <i *ngIf="menu.icon" class="fa {{menu.icon}}"></i>
+              <ng-template
+                  [ngTemplateOutlet]="menu.template" 
+                  [ngOutletContext]="{ menu: menu }">
+              </ng-template>
+            </a>
+
+            <a *ngIf="menu.downChild" class="ch-menu-titel">
+              <i *ngIf="menu.icon" class="fa {{menu.icon}}"></i>
+              <ng-template
+                  [ngTemplateOutlet]="menu.template" 
+                  [ngOutletContext]="{ menu: menu }">
+              </ng-template>
+             
+              <div *ngIf="menu.downChild" class="ch-dropdown-toggle">
+                <ul>
+                  <div class="dropTitle">收到 {{menu.template._parentView.component.num}} 条消息通知</div>
+                  <li *ngFor="let down of menu.downChild" [routerLink]="menu.router">
+                    <a>{{down.title}}</a>
+                  </li>
+                  <div class="dropfoot">查看全部消息通知 <i class="fa fa-comment pull-right"></i></div>
+                </ul>
+              </div>
+            </a>
+        </li>
+        <ng-container *ngIf="menu.options">
+          <li class="ch-dropdown-menu" chDropdown>
+            <a class="ch-menu-titel"><i *ngIf="menu.icon" class="fa {{menu.icon}}"></i>{{menu.title}}</a>
+            <div class="ch-dropdown-toggle" #dropdownMenu>
+                <ul>
+                  <li *ngFor="let option of menu.options">
+                    <a *ngIf="option.router" [routerLink]="option.router">{{option.text}}</a>
+                    <a *ngIf="!option.router">{{option.text}}</a>
+                  </li>
+                </ul>
+            </div>
           </li>
-          <div class="dropfoot">查看全部消息通知 <i class="fa fa-comment pull-right"></i></div>
-        </ul>
-    </div>
-  </li>
+        </ng-container>
+  </ng-container>
 </ul>

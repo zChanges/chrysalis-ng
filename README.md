@@ -11,6 +11,7 @@
 - [x] pager
 - [x] pagination
 - [x] tabs
+- [x] badge
 
 ## Build
 * Run serve: `npm start`

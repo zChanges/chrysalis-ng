@@ -22,7 +22,8 @@ import {
   ChNavMenuDemoModule,
   ChPageDemoModule,
   ChPaginationDemoModule,
-  ChTabsDemoModule
+  ChTabsDemoModule,
+  ChBadgeDemoModule
 } from './demo-app';
 
 
@@ -45,7 +46,8 @@ import {
     ChNavMenuDemoModule,
     ChPageDemoModule,
     ChPaginationDemoModule,
-    ChTabsDemoModule
+    ChTabsDemoModule,
+    ChBadgeDemoModule
   ],
   providers: [DemoConfigService],
   bootstrap: [AppComponent]

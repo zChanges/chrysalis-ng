@@ -4,7 +4,8 @@ import {
   ChNavMenuDemoComponent,
   ChPageDemoComponent,
   ChPaginationDemoComponent,
-  ChTabsDemoComponent
+  ChTabsDemoComponent,
+  ChBadgeDemoComponent
 } from './demo-app';
 import { SharedCaseComponent } from './shared/shared-case/shared-case.component';
 
@@ -16,6 +17,7 @@ export const routes: Routes = [
   { path: 'pager', component: ChPageDemoComponent },
   { path: 'pagination', component: ChPaginationDemoComponent },
   { path: 'tabs', component: ChTabsDemoComponent },
+  { path: 'Badge', component: ChBadgeDemoComponent },
   { path: 'component/:name', component: SharedCaseComponent, data: { reusable: true } },
 ];
 

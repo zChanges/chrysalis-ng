@@ -1,6 +1,9 @@
 <div class="header">
     <ch-navMenu [menubarList]="menuList" title='Chrysalis-Ng'></ch-navMenu>
 </div>
+<ng-template #msgView>
+    <ch-badge [text]="num" cssClass='red'></ch-badge>
+</ng-template>
 <div class="content-body" [ngClass]="{'body-collapsed': !(isCollapse | async)}">
     <ch-sidebar [menuList]="sidebarList"  class="leftSidebar"></ch-sidebar>
     <div class="content">
