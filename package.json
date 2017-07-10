@@ -1,7 +1,10 @@
 {
   "name": "chrysalis-ng",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "> Angular4 UI framework",
+  "homepage": "https://github.com/zChanges/chrysalis-ng",
   "license": "MIT",
+  "author": "",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,7 +13,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zChanges/chrysalis-ng.git"
+  },
   "dependencies": {
     "@angular/animations": "^4.2.6",
     "@angular/common": "^4.2.6",
