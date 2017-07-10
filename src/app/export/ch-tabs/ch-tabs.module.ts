@@ -5,6 +5,7 @@ import { ChTabComponent } from './tab.component';
 import { TabTitleDirective } from './tab-title.directive';
 import { TabContentDirective } from './tab-content.directive';
 
+
 @NgModule({
   imports: [
     CommonModule
@@ -13,7 +14,7 @@ import { TabContentDirective } from './tab-content.directive';
     ChTabsComponent,
     ChTabComponent,
     TabTitleDirective,
-    TabContentDirective
+    TabContentDirective,
   ],
   exports: [
     ChTabsComponent,

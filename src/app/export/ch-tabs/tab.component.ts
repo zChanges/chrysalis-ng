@@ -4,7 +4,7 @@ import { TabTitleDirective } from './tab-title.directive';
 
 @Component({
   selector: 'ch-tab',
-  template: '',
+  template: ''
 })
 export class ChTabComponent implements AfterContentInit {
   @Input() id: string;

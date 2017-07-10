@@ -9,6 +9,7 @@ import { ChTabsModule } from './ch-tabs';
 import { ChBadgeModule } from './ch-badge';
 
 
+
 @NgModule({
   imports: [
     CommonModule,

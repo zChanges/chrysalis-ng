@@ -21,11 +21,19 @@ a{
   text-decoration: none !important;
   cursor: pointer;
 }
+
+.ch-badge{
+  position: relative;
+  display: inline-block;
+}
 .badgePosition { 
   position: absolute; 
-  top:14px; 
-  right:6px; 
+  top:-7px;; 
+  right:-2px; 
 } 
 .badge{
   padding: 3px 6px;
+}
+.red{
+  background-color: red;
 }

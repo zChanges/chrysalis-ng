@@ -6,8 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./chBadgeDemo.component.scss']
 })
 export class ChBadgeDemoComponent {
-  number= 0;
+  number= 10;
+  maxText = 8;
   add() {
     this.number++;
+  }
+
+  maxTextAdd() {
+    this.maxText++;
   }
 }

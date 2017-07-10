@@ -51,11 +51,8 @@
                 
             }
             &:hover {
-                color: #00abff;
+                color: $sidbarColor;
             }
-        }
-        .sidebar-childlist{
-            // background: #131e26;
         }
     }
     .sidebar-childlist{

@@ -1,5 +1,20 @@
-<div style="position:relative">
+<div class="ch-badge">
+    <button type="button" class="btn btn-info" (click)="add()">消息</button>
     <ch-badge [text]="number" cssClass='red'></ch-badge>
 </div>
-<button type="button" class="btn btn-info" (click)="add()">button</button>
+
+<div class="ch-badge">
+    <button type="button" class="btn btn-info">回复</button>
+    <ch-badge text="1000" cssClass='red'></ch-badge>
+</div>
+
+<div class="ch-badge">
+    <button type="button" class="btn btn-info" (click)="maxTextAdd()">评论</button>
+    <ch-badge [text]="maxText" cssClass='red' max='10'></ch-badge>
+</div>
+
+<div class="ch-badge">
+    <button type="button" class="btn btn-info">热销</button>
+    <ch-badge text="hot" cssClass='red'></ch-badge>
+</div>
 

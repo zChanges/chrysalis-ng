@@ -1,7 +1,8 @@
+@import '../../../../../assets/config.scss';
 .active{
   font-weight: 600;
-  color: #00abff !important;
+  color:  $sidbarColor !important;
    &:hover {
-       color: #00abff !important;
+       color: $sidbarColor !important;
    }
 }
