@@ -1,3 +1,8 @@
 <div style="width:500px;">
     <ch-navMenu title="zChange" [menubarList]="menubarList"></ch-navMenu>
 </div>
+<ng-template #msgView>
+    <div class="ch-badge" style="top:-17px;right:-5px;">
+        <ch-badge [text]="num" cssClass='red'></ch-badge>
+    </div>
+</ng-template>

@@ -2,7 +2,15 @@
   <ng-container *ngFor="let menu of menubarList">
         <li class="ch-dropdown-menu" *ngIf="menu.template" chDropdown>
 
-            <a *ngIf="!menu.downChild" class="ch-menu-titel" [routerLink]="menu.router">
+            <a *ngIf="!menu.downChild && menu.router" class="ch-menu-titel" [routerLink]="menu.router">
+              <i *ngIf="menu.icon" class="fa {{menu.icon}}"></i>
+              <ng-template
+                  [ngTemplateOutlet]="menu.template" 
+                  [ngOutletContext]="{ menu: menu }">
+              </ng-template>
+            </a>
+
+            <a *ngIf="!menu.downChild && menu.url" class="ch-menu-titel" [href]="menu.url">
               <i *ngIf="menu.icon" class="fa {{menu.icon}}"></i>
               <ng-template
                   [ngTemplateOutlet]="menu.template" 

@@ -12,24 +12,14 @@ export class AppComponent implements OnInit {
   isFixed = false;
   menuList = [];
   sidebarList = [];
-  num = 0;
-  @ViewChild('msgView') msgView;
+  @ViewChild('github') github;
 
   constructor(private Store: Store<any>) {
   }
   ngOnInit() {
     this.isCollapse = this.Store.select('sidebar');
     this.menuList = [
-      { icon: 'fa-bell-o', template: this.msgView, router: 'component/Tabs',
-        downChild: [
-          { title: 'navMenu'},
-          { title: 'sidebar' },
-          { title: 'tabs' }
-        ]
-      },
-      // { icon: 'fa-bell-o', template: this.msgView, router: 'component/Tabs'},
-      { icon: 'fa-envelope-o', options: [{ text: 'Normal' }, { text: 'Normal' }, { text: 'Normal' }] },
-      { options: [{ router: '/tabs', text: '个人资料' }, { router: '/tabs', text: '退出登录' }], title: 'zChange' }
+      { icon: 'fa-star', url: 'https://github.com/zChanges/chrysalis-ng', template: this.github, },
     ];
 
     this.sidebarList = [

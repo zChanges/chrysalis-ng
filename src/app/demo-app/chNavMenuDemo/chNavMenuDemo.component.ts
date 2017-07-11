@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  ViewChild} from '@angular/core';
 
 @Component({
   selector: 'ch-navMenuDemo',
@@ -7,13 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChNavMenuDemoComponent implements OnInit {
   menubarList = [];
+  num = 0;
+
+  @ViewChild('msgView') msgView;
+
   constructor() { }
 
   ngOnInit() {
     this.menubarList = [
-      { icon: 'fa-bell-o', options: ['Normal', 'Normal', 'Normal'], },
-      { icon: 'fa-envelope-o', options: ['Normal', 'Normal', 'Small'] },
-      { options: ['登录', '退出'], title: 'zChange' }
+      { icon: 'fa-bell-o', template: this.msgView, router: 'component/Tabs',
+        downChild: [
+          { title: 'navMenu'},
+          { title: 'sidebar' },
+          { title: 'tabs' }
+        ]
+      },
+      { icon: 'fa-envelope-o', options: [{ text: 'Normal' }, { text: 'Normal' }, { text: 'Normal' }] },
+      { options: [{ router: '/tabs', text: '个人资料' }, { router: '/tabs', text: '退出登录' }], title: 'zChange' }
     ];
   }
 
