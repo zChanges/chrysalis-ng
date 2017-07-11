@@ -1,7 +1,6 @@
 import { Component, OnInit, HostListener, Input } from '@angular/core';
-import { layoutSize } from './../../global.config';
 import { Store } from '@ngrx/store';
-import { NORMAL, COLLAPSED } from '../../reducers/re-sidebar';
+import { chrysalisConfig } from '../chrysalis-config';
 import { Observable } from 'rxjs/Rx';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/throttleTime';
@@ -20,7 +19,7 @@ export class ChSidebarComponent implements OnInit {
   lockState = true;
   resizeSub: Subject<any> = new Subject<any>();
 
-  constructor(private Store: Store<any>) { }
+  constructor(private chryConfig: chrysalisConfig, private Store: Store<any>) { }
 
   @HostListener('window:resize')
   onwindwoResize(): void {
@@ -42,11 +41,11 @@ export class ChSidebarComponent implements OnInit {
   }
 
   private sidebarCollapse() {
-    window.innerWidth <= layoutSize.widthCollapseSidebar ? this.Store.dispatch({ type: COLLAPSED }) : this.Store.dispatch({ type: NORMAL });
+    window.innerWidth <= this.chryConfig.layoutSize.widthCollapseSidebar ? this.Store.dispatch({ type: this.chryConfig.COLLAPSED }) : this.Store.dispatch({ type: this.chryConfig.NORMAL });
   }
 
   private isSidebarCollapse() {
-    return window.innerWidth <= layoutSize.widthCollapseSidebar;
+    return window.innerWidth <= this.chryConfig.layoutSize.widthCollapseSidebar;
   }
 
   onToggleCollapse(event) {

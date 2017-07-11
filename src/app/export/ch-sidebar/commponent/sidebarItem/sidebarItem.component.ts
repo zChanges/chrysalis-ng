@@ -1,8 +1,7 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import * as $ from 'jquery';
 import { Store } from '@ngrx/store';
-import { NORMAL, COLLAPSED } from '../../../../reducers/re-sidebar';
-import { layoutSize } from '../../../../global.config';
+import { chrysalisConfig } from '../../../chrysalis-config';
 
 
 @Component({
@@ -15,11 +14,11 @@ export class SidebarItemComponent {
   @Input() isCollapse: boolean;
   @Input() menuItem: any;
   @Output() toggleCollapse = new EventEmitter<any>();
-  constructor(private Store: Store<any>) { }
+  constructor(private chryConfig: chrysalisConfig, private Store: Store<any>) { }
 
   onToggleSub(event) {
     if (this.sidebarCollapse()) {
-      this.Store.dispatch({ type: NORMAL });
+      this.Store.dispatch({ type: this.chryConfig.NORMAL });
       this.toggleCollapse.emit(false);
     }
     const sildebar = $(event.currentTarget.nextSibling).next();
@@ -28,6 +27,6 @@ export class SidebarItemComponent {
   }
 
   private sidebarCollapse() {
-    return window.innerWidth <= layoutSize.widthCollapseSidebar;
+    return window.innerWidth <= this.chryConfig.layoutSize.widthCollapseSidebar;
   }
 }
