@@ -65,14 +65,11 @@ gulp.task('ng2:aot', ['ng2:inline'], function (cb) {
   });
 });
 
-// gulp.task('prenpm', ['ng2:aot'], function () {
-//   return gulp.src(['README.md', 'package.json', 'src/app/exports/**/*.d.ts'], {read: true})
-//     .pipe(gulp.dest(config.lib));
-// });
-
-
-gulp.task('publish', function (cb) {
-  runSequence(['clean:dist', 'copy:exports', 'ng2:inline','ng2:aot'], cb);
+gulp.task('prenpm', ['ng2:aot'], function () {
+  return gulp.src(['README.md', 'package.json', 'src/app/exports/**/*.d.ts'], {read: true})
+    .pipe(gulp.dest(config.lib));
 });
 
-//, 'ng2:aot', 'prenpm'
+gulp.task('publish', function (cb) {
+  runSequence(['clean:dist', 'copy:exports', 'ng2:inline','ng2:aot','prenpm'], cb);
+});
