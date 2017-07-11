@@ -15,7 +15,8 @@ import {
   SharedCaseComponent,
   ExampleCodeComponent,
   ExampleContentComponent,
-  DemoConfigService
+  DemoConfigService,
+  MetamorphoseComponent
 } from './shared';
 
 import {
@@ -34,7 +35,8 @@ import {
     AppComponent,
     SharedCaseComponent,
     ExampleCodeComponent,
-    ExampleContentComponent
+    ExampleContentComponent,
+    MetamorphoseComponent
   ],
   imports: [
     BrowserModule,

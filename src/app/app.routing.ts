@@ -8,16 +8,18 @@ import {
   ChBadgeDemoComponent
 } from './demo-app';
 import { SharedCaseComponent } from './shared/shared-case/shared-case.component';
+import { MetamorphoseComponent } from './shared';
 
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'component', pathMatch: 'full' },
+  { path: '', redirectTo: 'Metamorphose', pathMatch: 'full' },
   { path: 'sidebar', component: ChSidebarDemoComponent },
   { path: 'navMenu', component: ChNavMenuDemoComponent },
   { path: 'pager', component: ChPageDemoComponent },
   { path: 'pagination', component: ChPaginationDemoComponent },
   { path: 'tabs', component: ChTabsDemoComponent },
   { path: 'Badge', component: ChBadgeDemoComponent },
+  { path: 'Metamorphose', component: MetamorphoseComponent },
   { path: 'component/:name', component: SharedCaseComponent, data: { reusable: true } },
 ];
 

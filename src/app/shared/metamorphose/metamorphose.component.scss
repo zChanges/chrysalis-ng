@@ -1,0 +1,19 @@
+.header{
+    display: flow-root;
+    .subHead{
+        span{
+            color: rgba(0,0,0,.6);
+            line-height: 1.2em; 
+        }
+    }
+}
+
+.list{
+    ul {
+        margin-left: 30px;
+        li{
+            list-style:disc  !important;
+            line-height: 25px;
+        }
+    }
+}

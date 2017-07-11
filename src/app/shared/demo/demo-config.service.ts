@@ -51,6 +51,12 @@ export class DemoConfigService {
       cmp: ChBadgeDemoComponent,
       html: require('!raw-loader!../../demo-app/chBadgeDemo/chBadgeDemo.component.html'),
       ts: require('!raw-loader!../../demo-app/chBadgeDemo/chBadgeDemo.component.ts'),
-    }
+    },
+    {
+      name: 'Use',
+      directory: 'use',
+      html: require('!raw-loader!../metamorphose/config.use.html')
+    },
+
   ];
 }
