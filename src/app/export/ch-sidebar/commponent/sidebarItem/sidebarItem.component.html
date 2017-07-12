@@ -1,8 +1,8 @@
-<li [ngClass]="{overturnSub: arrows}">
-    <a *ngIf="menuItem.children" class="ch-sidebar-list-link"  (click)="onToggleSub($event)" routerLinkActive="active">
-          <i class="{{menuItem.icon}}"></i>
-          <span>{{menuItem.title}}</span>
-          <b class="fa fa-angle-down"></b>
+<li  chSlideToggle>
+    <a *ngIf="menuItem.children" class="ch-sidebar-list-link ch-sidebar-parent" (click)="onToggleSub($event)" routerLinkActive="active">
+          <i class="{{menuItem.icon}} sid-parent-i"></i>
+          <span class="sid-parent-span">{{menuItem.title}}</span>
+          <b class="fa fa-angle-down sid-parent-b"></b>
     </a>
 
     <a *ngIf="!menuItem.children" class="ch-sidebar-list-link" [routerLink]="menuItem.route"  routerLinkActive="active">

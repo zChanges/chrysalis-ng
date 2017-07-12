@@ -14,16 +14,16 @@ export class ChSidebarDemoComponent implements OnInit {
       {
         title: '导航', icon: 'fa fa-navicon',
         children: [
-          { title: '头部导航', route: 'component/NavMenu' },
-          { title: '侧边导航', route: 'component/Sidebar' },
-          { title: '标签页', route: 'component/Tabs' }
+          { title: '头部导航', route: '' },
+          { title: '侧边导航', route: '' },
+          { title: '标签页', route: '' }
         ]
       },
       {
         title: '数据', icon: 'fa fa-table',
         children: [
-          { title: 'Pager分页', route: 'component/Pager' },
-          { title: 'Pagination分页', route: 'component/Pagination' }
+          { title: 'Pager分页', route: '' },
+          { title: 'Pagination分页', route: '' }
         ]
       }
     ];

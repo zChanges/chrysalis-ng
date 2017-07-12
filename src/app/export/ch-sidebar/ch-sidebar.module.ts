@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SidebarItemComponent } from './commponent/sidebarItem/sidebarItem.component';
 import { ChSidebarComponent } from './ch-sidebar.component';
 // import { SidebarItemComponent, ChSidebarComponent} from './index';
+import { ChSlideToggleDirective } from './ch-slideToggle.directive';
 
 
 @NgModule({
@@ -11,7 +12,15 @@ import { ChSidebarComponent } from './ch-sidebar.component';
     CommonModule,
     RouterModule
   ],
-  exports: [ChSidebarComponent, SidebarItemComponent],
-  declarations: [ChSidebarComponent, SidebarItemComponent]
+  exports: [
+    ChSidebarComponent,
+    SidebarItemComponent,
+    ChSlideToggleDirective
+  ],
+  declarations: [
+    ChSidebarComponent,
+    SidebarItemComponent,
+    ChSlideToggleDirective
+  ]
 })
 export class ChSidebarModule { }

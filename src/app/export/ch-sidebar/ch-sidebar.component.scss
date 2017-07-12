@@ -56,7 +56,10 @@
         }
     }
     .sidebar-childlist{
-        display: none;
+        // display: none;
+        height: 0; 
+        overflow: hidden;
+        transition: height 0.6s ease;
     }
 
     .overturnSub{
@@ -65,9 +68,10 @@
                 transform: rotate(180deg);
             }
         }
-        > .sidebar-childlist{
-            display: block;
-        }
+        // > .sidebar-childlist{
+        //     // display: block;
+        //     // height: 126px;
+        // }
     }
 
     .menu-collapsed {

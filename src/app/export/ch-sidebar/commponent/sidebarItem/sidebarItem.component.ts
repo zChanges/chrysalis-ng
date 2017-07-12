@@ -1,5 +1,4 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
-import * as $ from 'jquery';
 import { Store } from '@ngrx/store';
 import { chrysalisConfig } from '../../../chrysalis-config';
 
@@ -21,9 +20,6 @@ export class SidebarItemComponent {
       this.Store.dispatch({ type: this.chryConfig.NORMAL });
       this.toggleCollapse.emit(false);
     }
-    const sildebar = $(event.currentTarget.nextSibling).next();
-    this.arrows = !this.arrows;
-    sildebar.stop().slideToggle();
   }
 
   private sidebarCollapse() {
