@@ -1,8 +1,8 @@
 {
   "name": "chrysalis-ng",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
-  "description": "> Angular4 UI framework",
+  "description": "Angular4 UI framework",
   "main": "index.js",
   "homepage": "https://github.com/zChanges/chrysalis-ng",
   "author": "zChange",
@@ -15,7 +15,9 @@
     "e2e": "ng e2e",
     "chry.build": "ng build -prod --aot",
     "publish-pages": "ng build --prod --aot --base-href \"https://zChanges.github.io/chrysalis-ng/\"",
-    "github-pages:deploy": "ngh --message \"chrysalis-ng example deploy\""
+    "github-pages:deploy": "ngh --message \"chrysalis-ng example deploy\"",
+    "deploy.publish": "gulp publish",
+    "start.publish":"gulp publish && npm publish ./lib"
   },
   "private": false,
   "repository": {

@@ -9,6 +9,7 @@
 /node_modules
 /lib
 /dist
+/aot
 
 # IDEs and editors
 /.idea
