@@ -14,7 +14,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "chry.build": "ng build -prod --aot",
-    "publish-pages": "ng build -prod --aot --base-href \"https://zChanges.github.io/chrysalis-ng/\"",
+    "publish-pages": "ng build -prod --aot --base-href \"https://zChanges.github.io/chrysalis-ng/\" && ngh --message \"chrysalis-ng example deploy\"",
     "github-pages:deploy": "ngh --message \"chrysalis-ng example deploy\"",
     "deploy.publish": "gulp publish",
     "start.publish": "gulp publish && npm publish ./lib"

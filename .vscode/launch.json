@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome with ng serve",
+            "url": "http://localhost:4200",
+            "webRoot": "${workspaceRoot}"
+        }
+    ]
+}

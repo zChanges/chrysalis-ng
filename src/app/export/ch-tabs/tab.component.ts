@@ -9,7 +9,7 @@ import { TabTitleDirective } from './tab-title.directive';
 export class ChTabComponent implements AfterContentInit {
   @Input() id: string;
   @Input() title: string;
-  @Input() disable = false;
+  @Input() disabled: boolean | string = false;
   @ContentChild(TabContentDirective) contentTpl: TabContentDirective;
   @ContentChild(TabTitleDirective) titleTpl: TabTitleDirective;
   constructor() {
