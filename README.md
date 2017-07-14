@@ -28,20 +28,23 @@ export class AppModule { }
 
 ## Components
 
-| Name | Docs |
-| ------ | ------ |
-| sidebar | --------- |
-| navMenu | --------- |
-| pager | --------- |
-| tabs | [Docs](./notes/chrysalis-ng(tabs).md) |
-| badge | [Docs](./notes/chrysalis-ng(badge).md) |
-
 - [x] sidebar
 - [x] navMenu
 - [x] pager
 - [x] pagination
 - [x] tabs 
 - [x] badge 
+
+| Name | Docs |
+| ------ | ------ |
+| sidebar | --------- |
+| navMenu | --------- |
+| pager | --------- |
+| pagination | [Docs](./notes/chrysalis-ng(pagination).md) |
+| tabs | [Docs](./notes/chrysalis-ng(tabs).md) |
+| badge | [Docs](./notes/chrysalis-ng(badge).md) |
+
+
 
 
 

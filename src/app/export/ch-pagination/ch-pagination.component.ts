@@ -55,7 +55,7 @@ export class ChPaginationComponent {
   createPageArray() {
     const index = this.pageIndex;
     if (this.totalPage < this.count) {
-      this.showPages = new Array<number>(this.totalPage).fill(index).map((_a, i) => i + 1);
+      this.showPages = new Array<number>(this.totalPage).fill(0).map((_a, i) => i + 1);
       return;
     }
     this.showPages = this.getPagesRange();

@@ -215,7 +215,11 @@ export class TabContentDirective {
 }
 
 ```
+## 遇到的坑
+> 如何判断`"false"`值等于`false`
 
+1.`eval('false')` 
+2.`'false' === 'true'`作为字符串去判断
 
     
   [1]: https://zchanges.github.io/chrysalis-ng/#/component/Tabs
