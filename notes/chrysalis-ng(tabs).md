@@ -1,7 +1,7 @@
 # chrysalis-ng(tabs) 
 [预览效果][1]
 
-# Mind Map
+# 思维导图
 ![ch-tabs](../notes/img/chrysalis-tabs.png)
 
 # ch-tabs
@@ -11,8 +11,9 @@
 `Selector: ch-tabs`
 `Selector: ch-tab`
 
-## Properties
+## 说明API
 **ch-tab:**
+
 | Name | Description |
 | ------ | ------ |
 | @Input() id | 匹配选中tab页状态值 (any) |
@@ -21,8 +22,7 @@
 | @ContentChild() contentTpl | 获取视图中的匹配元素；如directive中的templateRef|
 | @ContentChild() titleTpl | 获取视图中的匹配元素；如directive中的templateRef|
 
-contentTpl
-## knowledge point
+## 知识点
 > 以标签形式`<></>`为`ContentChildren`； 在组件以内容或组件的一部分为`ViewChildren`
   `ContentChildren`是通过内容投射获取匹配元素的；`ViewChildren`是从模板视图中获取匹配元素的
 
@@ -117,7 +117,7 @@ export class ContentChildComponent implements AfterContentInit {
 
 > `TemplateRef`:实例用于表示内嵌模板对象。
 
-## explain:
+## 实现:
  **问题：**
 ```
 **如何获取需要展现的tab页:

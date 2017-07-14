@@ -28,12 +28,22 @@ export class AppModule { }
 
 ## Components
 
+| Name | Docs |
+| ------ | ------ |
+| sidebar | --------- |
+| navMenu | --------- |
+| pager | --------- |
+| tabs | [Docs](./notes/chrysalis-ng(tabs).md) |
+| badge | [Docs](./notes/chrysalis-ng(badge).md) |
+
 - [x] sidebar
 - [x] navMenu
 - [x] pager
 - [x] pagination
-- [x] tabs
-- [x] badge
+- [x] tabs 
+- [x] badge 
+
+
 
 ## Build
 * Run serve: `npm start`

@@ -5,14 +5,14 @@
 `import { ChBadgeModule } from 'chrysalis-ng';`
 ## Directives
 `Selector: ch-badge`
-## Properties
+## 说明API
 | Name | Description |
 | ------ | ------ |
 | @Input() text | 'string' or 'number' 显示的文字 |
 | @Input() max | 最大值，大于max值后显示如99+，默认值99 |
 | @Input() cssClass | 添加样式如'red' |
 
-## knowledge point
+## 知识点
 
 ### set() get()
 - `set() get()` 访问修饰符 `set`设置不用返回； `get`得到 需要返回；
@@ -38,7 +38,7 @@
     
     ```
  
-## explain:
+## 实现:
 ```typescript
 /**
  * 设置默认css、max=99；
