@@ -1,4 +1,4 @@
-import { Component, Input, ContentChild, AfterContentInit } from '@angular/core';
+import { Component, Input, ContentChild } from '@angular/core';
 import { TabContentDirective } from './tab-content.directive';
 import { TabTitleDirective } from './tab-title.directive';
 
@@ -6,15 +6,12 @@ import { TabTitleDirective } from './tab-title.directive';
   selector: 'ch-tab',
   template: ''
 })
-export class ChTabComponent implements AfterContentInit {
+export class ChTabComponent {
   @Input() id: string;
   @Input() title: string;
   @Input() disabled: boolean | string = false;
   @ContentChild(TabContentDirective) contentTpl: TabContentDirective;
   @ContentChild(TabTitleDirective) titleTpl: TabTitleDirective;
-  constructor() {
-  }
+  constructor() {}
 
-  ngAfterContentInit() {
-  }
 }

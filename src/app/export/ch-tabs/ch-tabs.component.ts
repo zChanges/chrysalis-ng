@@ -20,7 +20,4 @@ export class ChTabsComponent implements AfterContentInit {
       this.activeTab = id;
     }
   }
-
-
-
 }

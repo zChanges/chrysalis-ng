@@ -1,7 +1,7 @@
 <ul class="ch-tabs">  
     <li *ngFor="let tab of tabs" [ngClass]="{active: tab.id == activeTab}" [class.disabled]="tab.disabled==='true'" (click)="onSelect(tab.id)">
       <a>
-        <ng-template *ngIf="!tab.title" [ngTemplateOutlet]="tab.titleTpl?.templateRef"> </ng-template>
+        <ng-container *ngIf="!tab.title" [ngTemplateOutlet]="tab.titleTpl?.templateRef"> </ng-container>
         <span *ngIf="tab.title">{{tab.title}}</span>
       </a>  
     </li>  

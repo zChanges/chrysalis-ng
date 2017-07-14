@@ -4,7 +4,5 @@ import { Directive, TemplateRef } from '@angular/core';
   selector: '[ng-template[chTabContent]]'
 })
 export class TabContentDirective {
-
   constructor(private templateRef: TemplateRef<any>) { }
-
 }
