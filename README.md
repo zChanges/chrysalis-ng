@@ -37,7 +37,7 @@ export class AppModule { }
 
 | Name | Docs |
 | ------ | ------ |
-| sidebar | [Docs](./notes/chrysalis-ng(sildebar).md) |
+| sidebar | [Docs](./notes/chrysalis-ng(sidebar).md) |
 | navMenu | [Docs](./notes/chrysalis-ng(navMenu).md) |
 | pager | none |
 | pagination | [Docs](./notes/chrysalis-ng(pagination).md) |
