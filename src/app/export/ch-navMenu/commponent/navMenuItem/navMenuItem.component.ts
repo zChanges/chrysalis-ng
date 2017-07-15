@@ -1,4 +1,4 @@
-import { Component, ViewChild, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 @Component({
   selector: 'ch-navMenuItem',
   templateUrl: './navMenuItem.component.html',
@@ -7,6 +7,4 @@ import { Component, ViewChild, Input } from '@angular/core';
 export class NavMenuItemComponent {
   @Input() menubarList: any[];
   constructor() { };
-
-
 }

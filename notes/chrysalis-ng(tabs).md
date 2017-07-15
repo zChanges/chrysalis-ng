@@ -1,7 +1,7 @@
 # chrysalis-ng(tabs) 
 [预览效果][1]
 
-# 思维导图
+# 结构图
 ![ch-tabs](../notes/img/chrysalis-tabs.png)
 
 # ch-tabs
