@@ -4,3 +4,10 @@ export interface ImenuLeft {
     route?: string;
     children?: [ImenuLeft];
 }
+
+export interface chNotice {
+    type: string;
+    title: string;
+    text: string;
+    isAotDis?: boolean;
+}

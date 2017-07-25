@@ -1,0 +1,11 @@
+
+
+<button type="button" class="btn btn-success" (click)="emitNotice('success')">（成功）Success</button>
+
+<button type="button" class="btn btn-info" (click)="emitNotice('info')">（一般信息）Info</button>
+
+<button type="button" class="btn btn-warning" (click)="emitNotice('warn')">（警告）Warning</button>
+
+<button type="button" class="btn btn-danger" (click)="emitNotice('error')">（危险）Danger</button>
+
+<ch-notification [(messages)]="messages"></ch-notification>

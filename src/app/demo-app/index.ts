@@ -16,3 +16,7 @@ export * from './chTabsDemo/chTabsDemo.component';
 export * from './chBadgeDemo/chBadgeDemo.module';
 export * from './chBadgeDemo/chBadgeDemo.component';
 
+
+export * from './chNotificationDemo/chNotificationDemo.module';
+export * from './chNotificationDemo/chNotificationDemo.component';
+

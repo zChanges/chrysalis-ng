@@ -16,7 +16,7 @@ import {
   ExampleCodeComponent,
   ExampleContentComponent,
   DemoConfigService,
-  MetamorphoseComponent
+  MetamorphoseComponent,
 } from './shared';
 
 
@@ -26,8 +26,10 @@ import {
   ChPageDemoModule,
   ChPaginationDemoModule,
   ChTabsDemoModule,
-  ChBadgeDemoModule
+  ChBadgeDemoModule,
+  ChNotificationDemoModule
 } from './demo-app';
+
 
 
 
@@ -37,7 +39,7 @@ import {
     SharedCaseComponent,
     ExampleCodeComponent,
     ExampleContentComponent,
-    MetamorphoseComponent
+    MetamorphoseComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,8 @@ import {
     ChPageDemoModule,
     ChPaginationDemoModule,
     ChTabsDemoModule,
-    ChBadgeDemoModule
+    ChBadgeDemoModule,
+    ChNotificationDemoModule
   ],
   providers: [DemoConfigService, chrysalisConfig],
   bootstrap: [AppComponent]

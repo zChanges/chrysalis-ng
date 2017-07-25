@@ -38,3 +38,27 @@ a{
 .red{
   background-color: red;
 }
+
+/**
+ *  notification ---  type
+ */
+
+.ch-notice-success{
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+.ch-notice-info{
+  background-color: #2196f3;
+  border-color: #2196f3;
+}
+.ch-notice-warn{
+  background-color: #ffb300;
+  border-color: #ffb300;
+}
+
+.ch-notice-error{
+  background-color: #f44336;
+  border-color: #f44336;
+}
+
+

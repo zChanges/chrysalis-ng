@@ -5,7 +5,8 @@ import {
   ChPageDemoComponent,
   ChPaginationDemoComponent,
   ChTabsDemoComponent,
-  ChBadgeDemoComponent
+  ChBadgeDemoComponent,
+  ChNotificationDemoComponent
 } from './demo-app';
 import { SharedCaseComponent } from './shared/shared-case/shared-case.component';
 import { MetamorphoseComponent } from './shared';
@@ -20,6 +21,7 @@ export const routes: Routes = [
   { path: 'tabs', component: ChTabsDemoComponent },
   { path: 'Badge', component: ChBadgeDemoComponent },
   { path: 'Metamorphose', component: MetamorphoseComponent },
+  { path: 'Notification', component: ChNotificationDemoComponent },
   { path: 'component/:name', component: SharedCaseComponent, data: { reusable: true } },
 ];
 

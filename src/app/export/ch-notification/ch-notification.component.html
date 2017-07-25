@@ -1,0 +1,26 @@
+<div class="ch-notice">
+    <div #msgEl class="notice-content" *ngFor="let item of messages; let i = index" 
+      [ngClass]="{
+        'ch-notice-success': item.type == 'success',
+        'ch-notice-info': item.type == 'info',
+        'ch-notice-warn': item.type == 'warn',
+        'ch-notice-error': item.type == 'error'
+       }"
+    >
+      <a class="notice-close" (click)="remove(i,msgEl)"><i class="fa fa-times"></i></a>
+      <span class="notice-image fa fa-fw fa-2x"
+       [ngClass]="{
+         'fa-check': item.type == 'success',
+         'fa-info-circle': item.type == 'info',
+         'fa-warning': item.type == 'warn',
+         'fa-close': item.type == 'error'
+        }"
+      ></span>
+      <div class="notice-message-item">
+        <span class="notice-titel">{{item.title}}</span>
+        <p>{{item.text}}</p>
+      </div>
+    </div>
+
+</div>
+

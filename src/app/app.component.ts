@@ -38,7 +38,13 @@ export class AppComponent implements OnInit {
           { title: 'pager', route: 'component/Pager' },
           { title: 'pagination', route: 'component/Pagination' }
         ]
-      }
+      },
+      {
+        title: 'Message', icon: 'fa fa-comments-o',
+        children: [
+          { title: 'notification', route: 'component/Notification' }
+        ]
+      },
     ];
   }
 }
