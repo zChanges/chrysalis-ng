@@ -34,6 +34,7 @@ export class AppModule { }
 - [x] pagination
 - [x] tabs 
 - [x] badge 
+- [x] notification 
 
 | Name | Docs |
 | ------ | ------ |
@@ -43,6 +44,7 @@ export class AppModule { }
 | pagination | [Docs](./notes/chrysalis-ng(pagination).md) |
 | tabs | [Docs](./notes/chrysalis-ng(tabs).md) |
 | badge | [Docs](./notes/chrysalis-ng(badge).md) |
+| notification | [Docs](./notes/chrysalis-ng(notification).md) |
 
 
 

@@ -1,5 +1,4 @@
 import { Component, Input, AfterViewInit, OnDestroy, OnChanges } from '@angular/core';
-// import { chNotice } from '../../dataInterface';
 @Component({
   selector: 'ch-notification',
   templateUrl: './ch-notification.component.html',
@@ -7,16 +6,17 @@ import { Component, Input, AfterViewInit, OnDestroy, OnChanges } from '@angular/
 })
 export class ChNotificationComponent implements AfterViewInit, OnDestroy, OnChanges {
 
-  _messages = [];
-  @Input() set messages(mes) {
-    this._messages = mes;
-  };
-
-  get messages() {
-    return this._messages;
-  }
-
+  time = 1000;
+  @Input() messages = [];
   Interval: any;
+  // @Input() set messages(mes) {
+  //   this.messages = mes;
+  // };
+
+  // get messages() {
+  //   return this.messages;
+  // }
+
   constructor() { }
 
   ngAfterViewInit() {
@@ -26,7 +26,7 @@ export class ChNotificationComponent implements AfterViewInit, OnDestroy, OnChan
   }
 
   remove(index: number, msgEl: any) {
-    this._messages.splice(index, 1);
+    this.messages.splice(index, 1);
   }
 
   aotDisappear() {
@@ -35,10 +35,10 @@ export class ChNotificationComponent implements AfterViewInit, OnDestroy, OnChan
     }
 
     this.Interval = setInterval(() => {
-    if (this._messages.length < 1) { clearInterval(this.Interval); return; };
-      console.log(this._messages.filter((item) => { return item.isAotDis == false; }).splice(0, this._messages.length - 1))
-      this._messages = this._messages.filter((item) => { return item.isAotDis == false; }).splice(0, this._messages.length - 1)
-    }, 1000);
+      this.messages.forEach((item, index) => { if (!item.remain) { this.messages.splice(index, 1); }; });
+      const len = this.messages.filter((item) => { return item.remain === true; });
+      if (len.length < 1) { clearInterval(this.Interval); };
+    }, this.time);
   }
 
 
@@ -49,7 +49,7 @@ export class ChNotificationComponent implements AfterViewInit, OnDestroy, OnChan
   }
 
   ngOnChanges() {
-    if (this._messages.length > 0) {
+    if (this.messages.length > 0) {
       this.aotDisappear();
     }
   }

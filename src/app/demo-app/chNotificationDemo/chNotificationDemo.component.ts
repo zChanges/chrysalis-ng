@@ -14,9 +14,9 @@ export class ChNotificationDemoComponent implements OnInit {
 
   emitNotice(type) {
     this.messages = [];
-    this.messages.push({ type: type, title: type, text: 'balablabala' })
-    this.messages.push({ type: type, title: type, text: 'balablabala' })
-    this.messages.push({ type: type, title: type, text: 'balablabala', isAotDis: false })
+      this.messages.push({ type: type, title: type, text: 'balablabala', remain: false });
+      this.messages.push({ type: type, title: type, text: 'balablabala'});
+      this.messages.push({ type: type, title: type, text: 'balablabala', remain: true });
   }
 
 }
