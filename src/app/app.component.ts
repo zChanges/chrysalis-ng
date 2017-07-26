@@ -36,7 +36,8 @@ export class AppComponent implements OnInit {
         title: 'Data', icon: 'fa fa-table',
         children: [
           { title: 'pager', route: 'component/Pager' },
-          { title: 'pagination', route: 'component/Pagination' }
+          { title: 'pagination', route: 'component/Pagination' },
+          { title: 'loading', route: 'component/Loading' }
         ]
       },
       {

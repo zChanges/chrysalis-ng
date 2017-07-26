@@ -20,3 +20,6 @@ export * from './chBadgeDemo/chBadgeDemo.component';
 export * from './chNotificationDemo/chNotificationDemo.module';
 export * from './chNotificationDemo/chNotificationDemo.component';
 
+export * from './chLoadingDemo/chLoadingDemo.module';
+export * from './chLoadingDemo/chLoadingDemo.component'; 
+

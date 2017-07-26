@@ -8,6 +8,8 @@ import { ChPaginationModule } from './ch-pagination';
 import { ChTabsModule } from './ch-tabs';
 import { ChBadgeModule } from './ch-badge';
 import { ChNotificationModule } from './ch-notification';
+import { ChLoadingModule } from './ch-loading';
+
 
 
 
@@ -21,7 +23,8 @@ import { ChNotificationModule } from './ch-notification';
     ChPaginationModule,
     ChTabsModule,
     ChBadgeModule,
-    ChNotificationModule
+    ChNotificationModule,
+    ChLoadingModule
   ],
   exports: [
     ChSidebarModule,
@@ -30,7 +33,8 @@ import { ChNotificationModule } from './ch-notification';
     ChPaginationModule,
     ChTabsModule,
     ChBadgeModule,
-    ChNotificationModule
+    ChNotificationModule,
+    ChLoadingModule
   ],
   declarations: []
 })

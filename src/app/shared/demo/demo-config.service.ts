@@ -6,7 +6,8 @@ import {
   ChSidebarDemoComponent,
   ChTabsDemoComponent,
   ChBadgeDemoComponent,
-  ChNotificationDemoComponent
+  ChNotificationDemoComponent,
+  ChLoadingDemoComponent
 } from './../../demo-app';
 @Injectable()
 export class DemoConfigService {
@@ -59,6 +60,13 @@ export class DemoConfigService {
       cmp: ChNotificationDemoComponent,
       html: require('!raw-loader!../../demo-app/chNotificationDemo/chNotificationDemo.component.html'),
       ts: require('!raw-loader!../../demo-app/chNotificationDemo/chNotificationDemo.component.ts'),
+    },
+    {
+      name: 'Loading',
+      directory: 'loading',
+      cmp: ChLoadingDemoComponent,
+      html: require('!raw-loader!../../demo-app/chLoadingDemo/chLoadingDemo.component.html'),
+      ts: require('!raw-loader!../../demo-app/chLoadingDemo/chLoadingDemo.component.ts'),
     },
     {
       name: 'Use',
