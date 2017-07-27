@@ -18,6 +18,32 @@
         width: 10em;
         height: 10em;
         border: 1em solid #ffffff;
+        position: relative;
+    }
+    .spinner{
+        position: absolute;
+        top: -14px;
+        left: -14px;
+        transition: margin .2s ease-in,opacity .4s ease-in;
+        font-family: sans-serif;
+        font-weight: 100;
+        -webkit-animation: three-quarters 1.25s infinite linear;
+        animation: three-quarters 1.25s infinite linear;
+        border: 1em solid #00abff;
+        border-right-color: transparent;
+        border-radius: 100%;
+        box-sizing: border-box;
+        display: block;
+        vertical-align: middle;
+        overflow: hidden;
+        text-indent: -9999px;
+        width: 10em;
+        height: 10em;
+        :not{
+            margin-left: -22px;
+            opacity: 0;
+            transition: margin .4s ease-out,opacity .2s ease-out
+        }
     }
     .load-message{
         font-size: 1.3em;
@@ -26,4 +52,28 @@
     }
   }
 
+}
+
+@-webkit-keyframes three-quarters {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes three-quarters {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn)
+    }
 }
