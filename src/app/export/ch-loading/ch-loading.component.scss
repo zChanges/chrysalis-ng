@@ -12,29 +12,26 @@
       top: 40%;
       left: 0px;
       right: 0px;
-   .loader{
-        margin: 0px auto;
-        border-radius: 50%;
-        width: 10em;
-        height: 10em;
-        border: 1em solid #ffffff;
-        position: relative;
-    }
     .spinner{
-        position: absolute;
-        top: -14px;
-        left: -14px;
+        // position: absolute;
+        // top: -14px;
+        // left: -14px;
+         margin: 0px auto;
         transition: margin .2s ease-in,opacity .4s ease-in;
         font-family: sans-serif;
         font-weight: 100;
         -webkit-animation: three-quarters 1.25s infinite linear;
         animation: three-quarters 1.25s infinite linear;
-        border: 1em solid #00abff;
-        border-right-color: transparent;
+        border: {
+            top:1.1em solid rgba(255, 255, 255, 0.2);
+            right:1.1em solid rgba(255, 255, 255, 0.2);
+            left: 1.1em solid #00abff;
+            bottom:1.1em solid rgba(255, 255, 255, 0.2);
+        }
+        // border-right-color: transparent;
         border-radius: 100%;
         box-sizing: border-box;
         display: block;
-        vertical-align: middle;
         overflow: hidden;
         text-indent: -9999px;
         width: 10em;

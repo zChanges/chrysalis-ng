@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChLoadingService } from './../../export';
 
 @Component({
   selector: 'chLoadingDemo',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChLoadingDemoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private chLoadingService: ChLoadingService) {
+
+  }
 
   ngOnInit() {
+  }
+
+  close() {
+    this.chLoadingService.close();
   }
 
 }

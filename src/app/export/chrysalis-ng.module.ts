@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ChSidebarModule } from './ch-sidebar';
@@ -8,10 +8,7 @@ import { ChPaginationModule } from './ch-pagination';
 import { ChTabsModule } from './ch-tabs';
 import { ChBadgeModule } from './ch-badge';
 import { ChNotificationModule } from './ch-notification';
-import { ChLoadingModule } from './ch-loading';
-
-
-
+import { ChLoadingModule, ChLoadingService } from './ch-loading';
 
 
 @NgModule({
@@ -36,6 +33,17 @@ import { ChLoadingModule } from './ch-loading';
     ChNotificationModule,
     ChLoadingModule
   ],
-  declarations: []
+  declarations: [],
+  providers: [ChLoadingService]
 })
-export class ChrysalisNgModule { }
+export class ChrysalisNgModule {
+  // static forRoot(): ModuleWithProviders{
+  //   return {
+  //     ngModule: ChrysalisNgModule,
+  //     providers: [
+  //        { provide: ChLoadingService, useClass: ChLoadingService },
+  //     ]
+  //   }
+  // }
+
+}
