@@ -1,0 +1,38 @@
+.ch-autoComplete{
+    position: relative;
+    .ch-autoC-icon{
+        position: absolute;
+        right:0px;
+        top: 0px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .ch-autocomplete-menu{
+        width:100%;
+        position:absolute;
+        top: 100%;
+        left: -1px;
+        background: #fff;
+        box-shadow: 2px 2px 5px rgba(black, 0.14);
+        padding: 5px 0px;
+        z-index: 3;
+        .notFound{
+           cursor: pointer;
+            color: #acacac;
+            padding: 15px 10px;
+        }
+        li{
+            @extend .notFound;
+            color: lighten(black, 14);
+            transition: background 150ms linear; 
+            &:hover{
+                background: darken(#fff, 7);
+            }
+        }
+      
+        .selected{
+            background: darken(#fff, 7);
+        }
+        
+    }
+}

@@ -1,13 +1,15 @@
-import { Injectable, ComponentRef, Inject, ComponentFactoryResolver, ViewContainerRef, Injector } from '@angular/core';
+import { Injectable, ComponentRef, Inject, ComponentFactoryResolver, Injector } from '@angular/core';
 import { ChLoadingComponent } from './ch-loading.component';
+import { chrysalisConfig } from './../chrysalis-config';
+
 @Injectable()
 export class ChLoadingService {
 
     chLoadingCmp: ComponentRef<ChLoadingComponent>;
     constructor(
         private componentFactoryResolver: ComponentFactoryResolver,
-        private viewContainerRef: ViewContainerRef,
-        private Injector: Injector
+        private Injector: Injector,
+        private chrysalisConfig: chrysalisConfig
     ) { }
 
     start() {
@@ -15,8 +17,9 @@ export class ChLoadingService {
     }
 
     createLoading() {
+        const rootContainer = this.chrysalisConfig.rootContainer;
         const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ChLoadingComponent);
-        this.chLoadingCmp = this.viewContainerRef.createComponent(componentFactory, ChLoadingComponent.length, this.Injector);
+        this.chLoadingCmp = rootContainer.createComponent(componentFactory, ChLoadingComponent.length, this.Injector);
         const cmp = this.chLoadingCmp.instance;
     }
     close() {

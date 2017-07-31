@@ -13,8 +13,8 @@ export class ChLoadingDemoComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.chLoadingService.start();
   }
-
   close() {
     this.chLoadingService.close();
   }

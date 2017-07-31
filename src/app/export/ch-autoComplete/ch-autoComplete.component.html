@@ -1,0 +1,22 @@
+<div class="ch-autoComplete">
+  <input class="form-control" value="_inputVlaue" name="_inputValue" placeholder={{placeholder}}
+    [(ngModel)]="_inputValue" type="text" 
+    (focus)="onFocus()"
+    [disabled]='_disabled'
+    (keyup)="_keyboard($event)" 
+  />
+    <ul class="ch-autocomplete-menu" *ngIf="isMenuShow">
+      <li 
+        [class.selected]="selectedItem === i" 
+        *ngFor="let item of _list; let i = index;" 
+        value="{{item.value}}"
+        (click)='onSelected($event,i)'
+      >
+        <div class='menuItem'>
+          <div>{{item.text}}</div>
+          <div>{{item.text}}</div>
+        </div>
+      </li>
+      <div class="notFound" *ngIf="_list.length < 1" >Not results found</div>
+    </ul>
+</div>

@@ -7,7 +7,8 @@ import {
   ChTabsDemoComponent,
   ChBadgeDemoComponent,
   ChNotificationDemoComponent,
-  ChLoadingDemoComponent
+  ChLoadingDemoComponent,
+  ChAutoCompleteDemoComponent
 } from './../../demo-app';
 @Injectable()
 export class DemoConfigService {
@@ -67,6 +68,13 @@ export class DemoConfigService {
       cmp: ChLoadingDemoComponent,
       html: require('!raw-loader!../../demo-app/chLoadingDemo/chLoadingDemo.component.html'),
       ts: require('!raw-loader!../../demo-app/chLoadingDemo/chLoadingDemo.component.ts'),
+    },
+     {
+      name: 'AutoComplete',
+      directory: 'autoComplete',
+      cmp: ChAutoCompleteDemoComponent,
+      html: require('!raw-loader!../../demo-app/chAutoCompleteDemo/chAutoCompleteDemo.component.html'),
+      ts: require('!raw-loader!../../demo-app/chAutoCompleteDemo/chAutoCompleteDemo.component.ts'),
     },
     {
       name: 'Use',

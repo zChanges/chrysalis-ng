@@ -37,7 +37,8 @@ export class AppComponent implements OnInit {
         children: [
           { title: 'pager', route: 'component/Pager' },
           { title: 'pagination', route: 'component/Pagination' },
-          { title: 'loading', route: 'component/Loading' }
+          // { title: 'loading', route: 'loading' }
+          { title: 'autoComplete', route: 'component/AutoComplete' },
         ]
       },
       {

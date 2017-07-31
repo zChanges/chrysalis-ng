@@ -9,6 +9,8 @@ import { ChTabsModule } from './ch-tabs';
 import { ChBadgeModule } from './ch-badge';
 import { ChNotificationModule } from './ch-notification';
 import { ChLoadingModule, ChLoadingService } from './ch-loading';
+import { ChAutoCompleteModule } from './ch-autoComplete';
+
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { ChLoadingModule, ChLoadingService } from './ch-loading';
     ChTabsModule,
     ChBadgeModule,
     ChNotificationModule,
-    ChLoadingModule
+    ChLoadingModule,
+    ChAutoCompleteModule
   ],
   exports: [
     ChSidebarModule,
@@ -31,7 +34,8 @@ import { ChLoadingModule, ChLoadingService } from './ch-loading';
     ChTabsModule,
     ChBadgeModule,
     ChNotificationModule,
-    ChLoadingModule
+    ChLoadingModule,
+    ChAutoCompleteModule
   ],
   declarations: [],
   providers: [ChLoadingService]

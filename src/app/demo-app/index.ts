@@ -21,5 +21,9 @@ export * from './chNotificationDemo/chNotificationDemo.module';
 export * from './chNotificationDemo/chNotificationDemo.component';
 
 export * from './chLoadingDemo/chLoadingDemo.module';
-export * from './chLoadingDemo/chLoadingDemo.component'; 
+export * from './chLoadingDemo/chLoadingDemo.component';
+
+export * from './chAutoCompleteDemo/chAutoCompleteDemo.module';
+export * from './chAutoCompleteDemo/chAutoCompleteDemo.component';
+
 

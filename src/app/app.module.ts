@@ -28,7 +28,8 @@ import {
   ChTabsDemoModule,
   ChBadgeDemoModule,
   ChNotificationDemoModule,
-  ChLoadingDemoModule
+  ChLoadingDemoModule,
+  ChAutoCompleteDemoModule
 } from './demo-app';
 
 
@@ -57,7 +58,8 @@ import {
     ChTabsDemoModule,
     ChBadgeDemoModule,
     ChNotificationDemoModule,
-    ChLoadingDemoModule
+    ChLoadingDemoModule,
+    ChAutoCompleteDemoModule
   ],
   providers: [DemoConfigService, chrysalisConfig],
   bootstrap: [AppComponent]
