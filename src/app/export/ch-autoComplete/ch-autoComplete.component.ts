@@ -1,5 +1,6 @@
-import { Component, Input, HostListener, ElementRef } from '@angular/core';
+import { Component, Input, HostListener, ElementRef, Output, EventEmitter } from '@angular/core';
 import { DOWN_ARROW, UP_ARROW, ESCAPE, ENTER, autocompleteItms } from './../chrysalis-config';
+import { Observable } from "rxjs/Observable";
 
 @Component({
   selector: 'ch-autoComplete',
@@ -13,7 +14,10 @@ export class ChAutoCompleteComponent {
   _list = [];
   _itms = [];
   _disabled = false;
+  _required = false;
   noBlur = false;
+  isOnSelected = false;
+  _dataService: Observable<any>;
   @Input()
   set items(value: Array<any>) {
     this._itms = value;
@@ -22,6 +26,15 @@ export class ChAutoCompleteComponent {
   @Input('item-text') textKey = null;
   @Input() minLeng = 0;
   @Input() placeholder = '';
+  @Input() inputName = '';
+  @Input()
+  set required(value: any) {
+    this._required = value === 'true';
+  };
+  get required() {
+    return this._required;
+  }
+
   @Input()
   set disabled(value: any) {
     this._disabled = value === 'true';
@@ -30,10 +43,29 @@ export class ChAutoCompleteComponent {
     return this._disabled;
   }
 
+  @Input()
+  set dataService(newService) {
+    this._dataService = newService;
+  
+    this.dataServiceSubscribe();
+  }
+
+  @Output() inputChange: EventEmitter<any> = new EventEmitter<any>();
+  @Output() selectedInput: EventEmitter<any> = new EventEmitter<any>();
+
+
+
   @HostListener('document:click', ['$event'])
   onDocClick(event: KeyboardEvent) {
     const isContains = this.elementRef.nativeElement.contains(event.target);
     if (!isContains) {
+      if (!this.isOnSelected) {
+        this._inputValue = '';
+        this.selectedItem = 0;
+        this.isOnSelected = false;
+        this.emitInput(this._inputValue);
+        this.emitSelectedInput();
+      }
       this.mouseLeave();
     }
   }
@@ -47,6 +79,7 @@ export class ChAutoCompleteComponent {
    * @param event
    */
   _keyboard($event: KeyboardEvent) {
+    this.emitInput(this._inputValue);
     switch ($event.keyCode) {
       case ENTER:
         if (this.isMenuShow) {
@@ -69,6 +102,7 @@ export class ChAutoCompleteComponent {
         this.mouseLeave();
         break;
       default:
+        this.isOnSelected = false;
         setTimeout(() => { this.query(); }, 0);
         break;
     }
@@ -92,8 +126,11 @@ export class ChAutoCompleteComponent {
   }
 
   onSelected(event, index) {
+    this.isOnSelected = true;
     this._inputValue = this._list[index].text;
     this.mouseLeave();
+    this.emitSelectedInput(this._list[index], this._inputValue);
+    this.emitInput(this._inputValue);
   }
 
   mouseLeave() {
@@ -104,5 +141,26 @@ export class ChAutoCompleteComponent {
     this.noBlur = true;
   }
 
+  emitInput(data) {
+    this.inputChange.emit(data);
+  }
+
+  emitSelectedInput(data?: any, input?: string) {
+    this.selectedInput.emit({ data: data, value: input });
+  }
+
+  dataServiceSubscribe() {
+    if (this._dataService) {
+      this._dataService.subscribe(result => {
+        console.log(result);
+      })
+    }
+  }
 
 }
+
+/**
+ * 1.缺少多text值
+ * 2.是否只能选择一条。可否自己输入数据。
+ * 3.ajax
+ */

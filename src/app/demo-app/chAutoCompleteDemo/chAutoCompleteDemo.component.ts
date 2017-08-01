@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
+import { Component, OnInit, } from '@angular/core';
 
 @Component({
   selector: 'app-chAutoCompleteDemo',
@@ -13,9 +14,27 @@ export class ChAutoCompleteDemoComponent implements OnInit {
     { value: '4', text: 'eefece', name: '4444' },
     { value: '5', text: 'ffffa', name: '5555' }
   ];
-  constructor() { }
+  data: any;
+  value: any;
+  dataService: any;
+  constructor(private http: Http) {
+    this.dataService =
+      this.http.get('https://www.googleapis.com/books/v1/volumes?q=angular').subscribe(res => {
+        return res.json()
+      })
+  }
 
   ngOnInit() {
+  }
+
+  inputChange(event) {
+    console.log(event);
+    this.data = event;
+  }
+
+  selectedInput(event) {
+    console.log(event);
+    this.value = JSON.stringify(event);
   }
 
 }

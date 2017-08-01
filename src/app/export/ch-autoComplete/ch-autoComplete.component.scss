@@ -1,5 +1,12 @@
+$warn: #d9534f;
 .ch-autoComplete{
+    .ng-invalid.ng-touched {
+        border-color: $warn;
+    }
     position: relative;
+    .autoCplMsg{
+        color: $warn;
+    }
     .ch-autoC-icon{
         position: absolute;
         right:0px;

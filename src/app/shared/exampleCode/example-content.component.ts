@@ -1,5 +1,6 @@
 import {
   Component,
+  Type,
   Input,
   ViewContainerRef,
   ComponentFactoryResolver,
@@ -14,9 +15,15 @@ import {
   template: ''
 })
 export class ExampleContentComponent implements OnDestroy {
-  cmp: any;
+  cmp: Type<any>;
   cmpRef: ComponentRef<any>;
-  @Input() set component(cmp: any) {
+
+  constructor(private viewContainerRef: ViewContainerRef, private componentFactoryResolver: ComponentFactoryResolver,
+              private injector: Injector) {
+  }
+
+
+  @Input() set component(cmp: Type<any>) {
     this.cmp = cmp;
     this.onChangeCompontent();
   }
@@ -24,16 +31,12 @@ export class ExampleContentComponent implements OnDestroy {
   get component() {
     return this.cmp;
   }
-  constructor(
-    private viewContainerRef: ViewContainerRef,
-    private componentFactoryResolver: ComponentFactoryResolver,
-    private Injector: Injector
-  ) { }
 
   onChangeCompontent() {
     this.cmpRefDestory();
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.cmp);
-    this.cmpRef = this.viewContainerRef.createComponent(componentFactory, this.cmp.length, this.Injector);
+    this.cmpRef = this.viewContainerRef.createComponent(componentFactory, this.viewContainerRef.length, this.injector);
+    this.cmpRef.changeDetectorRef.markForCheck();
   }
 
   ngOnDestroy() {

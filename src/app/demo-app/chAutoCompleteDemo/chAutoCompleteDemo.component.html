@@ -1,8 +1,19 @@
- <ch-autoComplete
-    item-value='value'
-    item-text='text'
-    [items]='items'
-    minLeng='0'
-    disabled='false'
+<ch-autoComplete 
+    item-value='value' 
+    item-text='text' 
+    [items]='items' 
+    minLeng='0' 
+    disabled='false' 
+    required='false' 
     placeholder='请输入内容'
- ></ch-autoComplete> 
+    inputName='autoCpl' 
+    [dataService]='dataService'
+    (inputChange)="inputChange($event)" 
+    (selectedInput)="selectedInput($event)"
+>
+</ch-autoComplete>
+<br/>
+<pre>
+ {{data}}
+ {{value}}     
+ </pre>

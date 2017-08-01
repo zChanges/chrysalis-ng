@@ -1,10 +1,14 @@
 <div class="ch-autoComplete">
-  <input class="form-control" value="_inputVlaue" name="_inputValue" placeholder={{placeholder}}
+  <input class="form-control" value="_inputVlaue"  placeholder={{placeholder}}
     [(ngModel)]="_inputValue" type="text" 
     (focus)="onFocus()"
     [disabled]='_disabled'
     (keyup)="_keyboard($event)" 
+    #inputName="ngModel"
+    [required]='required'
+    [attr.name]='inputName'
   />
+  <!-- <div *ngIf="!inputName.valid" class="autoCplMsg">Sorry is required</div> -->
     <ul class="ch-autocomplete-menu" *ngIf="isMenuShow">
       <li 
         [class.selected]="selectedItem === i" 
@@ -14,7 +18,7 @@
       >
         <div class='menuItem'>
           <div>{{item.text}}</div>
-          <div>{{item.text}}</div>
+          <!-- <div>{{item.text}}</div> -->
         </div>
       </li>
       <div class="notFound" *ngIf="_list.length < 1" >Not results found</div>
