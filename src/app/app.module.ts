@@ -16,6 +16,7 @@ import {
   ExampleCodeComponent,
   ExampleContentComponent,
   DemoConfigService,
+  DemoRequestService,
   MetamorphoseComponent,
 } from './shared';
 
@@ -61,7 +62,7 @@ import {
     ChLoadingDemoModule,
     ChAutoCompleteDemoModule
   ],
-  providers: [DemoConfigService, chrysalisConfig],
+  providers: [DemoConfigService, chrysalisConfig, DemoRequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

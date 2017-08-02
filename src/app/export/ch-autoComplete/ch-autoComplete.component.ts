@@ -1,30 +1,32 @@
-import { Component, Input, HostListener, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, Input, HostListener, ElementRef, Output, EventEmitter, OnChanges, SimpleChanges, OnInit } from '@angular/core';
 import { DOWN_ARROW, UP_ARROW, ESCAPE, ENTER, autocompleteItms } from './../chrysalis-config';
-import { Observable } from "rxjs/Observable";
+import { Subject } from 'rxjs/Subject';
+import 'rxjs/add/operator/debounceTime';
 
 @Component({
   selector: 'ch-autoComplete',
   templateUrl: './ch-autoComplete.component.html',
   styleUrls: ['./ch-autoComplete.component.scss']
 })
-export class ChAutoCompleteComponent {
+export class ChAutoCompleteComponent implements OnChanges, OnInit {
 
   _inputValue = '';
   selectedItem = 0;
-  _list = [];
+  _list: Array<any> = [];
   _itms = [];
   _disabled = false;
   _required = false;
+  _isApiRequest = false;
   noBlur = false;
   isOnSelected = false;
-  _dataService: Observable<any>;
+  keyboard$: Subject<any> = new Subject<any>();
   @Input()
   set items(value: Array<any>) {
     this._itms = value;
   }
   @Input('item-value') valueKey = '';
   @Input('item-text') textKey = null;
-  @Input() minLeng = 0;
+  @Input() minSearchLength = 0;
   @Input() placeholder = '';
   @Input() inputName = '';
   @Input()
@@ -44,11 +46,14 @@ export class ChAutoCompleteComponent {
   }
 
   @Input()
-  set dataService(newService) {
-    this._dataService = newService;
-  
-    this.dataServiceSubscribe();
+  set isApiRequest(value) {
+    this._isApiRequest = value === 'true';
   }
+
+  get isMenuShow() {
+    return this.noBlur;
+  }
+
 
   @Output() inputChange: EventEmitter<any> = new EventEmitter<any>();
   @Output() selectedInput: EventEmitter<any> = new EventEmitter<any>();
@@ -63,23 +68,28 @@ export class ChAutoCompleteComponent {
         this._inputValue = '';
         this.selectedItem = 0;
         this.isOnSelected = false;
-        this.emitInput(this._inputValue);
-        this.emitSelectedInput();
+        this.emitInput({ iskeyboard: false, data: this._inputValue });
+        this.emitSelectedInput(false);
       }
       this.mouseLeave();
     }
   }
 
 
-  constructor(private elementRef: ElementRef) { }
+  constructor(private elementRef: ElementRef) {
+
+  }
+
+  ngOnInit() {
+    this.keyboard$.debounceTime(500)
+      .subscribe(data => {
+       if (this.isUpdate()) {return; };
+        this.emitInput({ iskeyboard: true, data: this._inputValue });
+      })
+  }
 
   // 键盘事件
-  /**
-   * input event listner
-   * @param event
-   */
   _keyboard($event: KeyboardEvent) {
-    this.emitInput(this._inputValue);
     switch ($event.keyCode) {
       case ENTER:
         if (this.isMenuShow) {
@@ -87,12 +97,14 @@ export class ChAutoCompleteComponent {
         }
         break;
       case DOWN_ARROW:
+        $event.preventDefault();
         if (this.isMenuShow) {
           this.selectedItem = (this.selectedItem === this._list.length - 1) ? 0
             : Math.min(this.selectedItem + 1, this._list.length - 1);
         }
         break;
       case UP_ARROW:
+        $event.preventDefault();
         if (this.isMenuShow) {
           this.selectedItem = (this.selectedItem === 0) ? this._list.length - 1
             : Math.max(0, this.selectedItem - 1);
@@ -102,26 +114,49 @@ export class ChAutoCompleteComponent {
         this.mouseLeave();
         break;
       default:
+        this.keyboard$.next();
         this.isOnSelected = false;
-        setTimeout(() => { this.query(); }, 0);
+        if (!this._isApiRequest) {
+          setTimeout(() => { this.upDateItms(); }, 0);
+        }
         break;
     }
   }
 
+
+
   query() {
-    if (this._inputValue.length < this.minLeng || this._inputValue.length < 1) { this.mouseLeave(); return; };
-    this.mouseenter();
     this._list = this._itms.map((i) => new autocompleteItms(i, this.textKey, this.valueKey))
       .filter(i => new RegExp(this._inputValue, 'ig').test(i.text));
   }
 
-  get isMenuShow() {
-    return this.noBlur;
+  apiRequestQuery() {
+    if (this._itms) {
+      this._list = this._itms.map((i) => new autocompleteItms(i, this.textKey, this.valueKey));
+    }
+  }
+
+  upDateItms() {
+    if (this.isUpdate()) {return; };
+    if (this._isApiRequest) {
+      this.apiRequestQuery();
+    } else {
+      this.query();
+    }
+    this.mouseenter();
+  }
+
+
+  ngOnChanges(change: SimpleChanges) {
+    if (this._isApiRequest && change.items) {
+      this._itms = change.items.currentValue;
+      this.upDateItms();
+    }
   }
 
   onFocus() {
     if (this._inputValue.length > 0) { return; };
-    this.query();
+    this.upDateItms();
     this.selectedItem = 0;
   }
 
@@ -129,8 +164,9 @@ export class ChAutoCompleteComponent {
     this.isOnSelected = true;
     this._inputValue = this._list[index].text;
     this.mouseLeave();
-    this.emitSelectedInput(this._list[index], this._inputValue);
-    this.emitInput(this._inputValue);
+    this.emitSelectedInput(true, this._list[index], this._inputValue);
+
+    this.emitInput({ iskeyboard: false, data: this._inputValue });
   }
 
   mouseLeave() {
@@ -145,17 +181,17 @@ export class ChAutoCompleteComponent {
     this.inputChange.emit(data);
   }
 
-  emitSelectedInput(data?: any, input?: string) {
-    this.selectedInput.emit({ data: data, value: input });
+  emitSelectedInput(isSelected?: boolean, data?: any, input?: string) {
+    this.selectedInput.emit({ isSelected: isSelected, data: { data: data, value: input } });
   }
 
-  dataServiceSubscribe() {
-    if (this._dataService) {
-      this._dataService.subscribe(result => {
-        console.log(result);
-      })
+  isUpdate() {
+    if (this._inputValue.length < this.minSearchLength || this._inputValue.length < 1) {
+      this.mouseLeave();
     }
+    return this._inputValue.length < this.minSearchLength || this._inputValue.length < 1;
   }
+
 
 }
 
@@ -163,4 +199,7 @@ export class ChAutoCompleteComponent {
  * 1.缺少多text值
  * 2.是否只能选择一条。可否自己输入数据。
  * 3.ajax
+ * 4.item-text 无法实现嵌套如 data.value
+ * 5添加http加载loading效果
+ * 6.父组件无法获取到required
  */

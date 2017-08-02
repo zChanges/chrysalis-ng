@@ -9,6 +9,6 @@ import { ChrysalisNgModule } from './../../export';
     ChrysalisNgModule
   ],
   declarations: [ChAutoCompleteDemoComponent],
-  exports: [ChAutoCompleteDemoComponent]
+  exports: [ChAutoCompleteDemoComponent],
 })
 export class ChAutoCompleteDemoModule { }

@@ -34,9 +34,9 @@ export class autocompleteItms {
         this.text = data[textKey];
       }
 
-      if (textKey instanceof Array) {
-        this.text = data
-      }
+      // if (textKey instanceof Array) {
+      //   this.text = data
+      // }
       this.value = data[valueKey];
 
     }

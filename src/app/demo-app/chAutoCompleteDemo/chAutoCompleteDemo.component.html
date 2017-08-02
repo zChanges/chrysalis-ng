@@ -1,19 +1,96 @@
-<ch-autoComplete 
-    item-value='value' 
-    item-text='text' 
-    [items]='items' 
-    minLeng='0' 
-    disabled='false' 
-    required='false' 
-    placeholder='请输入内容'
-    inputName='autoCpl' 
-    [dataService]='dataService'
-    (inputChange)="inputChange($event)" 
-    (selectedInput)="selectedInput($event)"
->
-</ch-autoComplete>
-<br/>
-<pre>
- {{data}}
- {{value}}     
- </pre>
+
+
+<form action="" method="POST" class="form-horizontal" role="form">
+    <div class="form-group">
+        <h3>default默认</h3>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <ch-autoComplete 
+            item-value='id' 
+            item-text='title' 
+            [items]='items' 
+            minSearchLength='0' 
+            disabled='false' 
+            required='false'
+            isApiRequest='false' 
+            placeholder='请输入内容'
+            inputName='autoCpl' 
+            (inputChange)="inputChange($event)" 
+            (selectedInput)="selectedInput($event)"
+            >
+            </ch-autoComplete>
+            <br/>
+            <pre>
+    data:{{data}}
+    value:{{value}}
+    minSearchLength:0 
+    disabled:false 
+    required:false 
+    isApiRequest:false  
+            </pre>
+        </div> 
+        
+    </div>
+
+    <div class="form-group">
+        <h3>Disabled禁止输入</h3>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <ch-autoComplete 
+            item-value='id' 
+            item-text='title' 
+            [items]='items' 
+            minSearchLength='0' 
+            disabled='true' 
+            required='false'
+            isApiRequest='false' 
+            placeholder='不可输入'
+            inputName='autoCpl' 
+            (inputChange)="inputChange($event)" 
+            (selectedInput)="selectedInput($event)"
+            >
+            </ch-autoComplete>
+            <br/>
+            <pre>
+    data:{{data}}
+    value:{{value}}
+    minSearchLength:0
+    disabled:false
+    required:false
+    isApiRequest:false    
+            </pre>
+        </div> 
+    </div>
+
+    <div class="form-group">
+        <h3>最小输入长度、必填、http获取数据</h3>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <ch-autoComplete 
+            item-value='id' 
+            item-text='title' 
+            [items]='items' 
+            minSearchLength='3' 
+            disabled='false' 
+            required='true'
+            isApiRequest='true' 
+            placeholder='巴拉巴拉一堆的'
+            inputName='autoCpl' 
+            (inputChange)="inputChangeRequire($event)" 
+            (selectedInput)="selectedInput($event)"
+            >
+            </ch-autoComplete>
+            <br/>
+            <pre>
+    data:{{data}}
+    value:{{value}}
+    minSearchLength:3
+    disabled:false
+    required:true
+    isApiRequest:true
+    {{autoCpl?.valid}}   
+            </pre>
+        </div> 
+    </div>
+            
+</form>
+
+
+
