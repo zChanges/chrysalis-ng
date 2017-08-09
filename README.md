@@ -1,6 +1,6 @@
 # Chrysalis/NG
 
-> Chrysalis-ng 用来学习angular4的UI框架。
+> Chrysalis-ng 用来学习angular4的UI组件库。
 
 在线例子link:[https://zchanges.github.io/chrysalis-ng/](https://zchanges.github.io/chrysalis-ng/)
 
