@@ -35,6 +35,7 @@ export class AppModule { }
 - [x] tabs 
 - [x] badge 
 - [x] notification 
+- [x] chAutoCompleteDemo
 
 | Name | Docs |
 | ------ | ------ |
@@ -45,7 +46,7 @@ export class AppModule { }
 | tabs | [Docs](./notes/chrysalis-ng(tabs).md) |
 | badge | [Docs](./notes/chrysalis-ng(badge).md) |
 | notification | [Docs](./notes/chrysalis-ng(notification).md) |
-
+| chAutoCompleteDemo | [Docs](./notes/chrysalis-ng(autoCompleteDemo).md) |
 
 
 

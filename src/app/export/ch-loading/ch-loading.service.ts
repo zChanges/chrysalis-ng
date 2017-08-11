@@ -5,7 +5,7 @@ import { chrysalisConfig } from './../chrysalis-config';
 @Injectable()
 export class ChLoadingService {
 
-    chLoadingCmp: ComponentRef<ChLoadingComponent>;
+    // chLoadingCmp: ComponentRef<ChLoadingComponent>;
     constructor(
         private componentFactoryResolver: ComponentFactoryResolver,
         private Injector: Injector,
@@ -13,18 +13,18 @@ export class ChLoadingService {
     ) { }
 
     start() {
-        this.createLoading();
+        // this.createLoading();
     }
 
     createLoading() {
-        const rootContainer = this.chrysalisConfig.rootContainer;
-        const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ChLoadingComponent);
-        this.chLoadingCmp = rootContainer.createComponent(componentFactory, ChLoadingComponent.length, this.Injector);
-        const cmp = this.chLoadingCmp.instance;
+        // const rootContainer = this.chrysalisConfig.rootContainer;
+        // const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ChLoadingComponent);
+        // this.chLoadingCmp = rootContainer.createComponent(componentFactory, ChLoadingComponent.length, this.Injector);
+        // const cmp = this.chLoadingCmp.instance;
     }
     close() {
-        if (this.chLoadingCmp) {
-            this.chLoadingCmp.destroy();
-        }
+        // if (this.chLoadingCmp) {
+        //     this.chLoadingCmp.destroy();
+        // }
     }
 }
